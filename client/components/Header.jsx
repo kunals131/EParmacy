@@ -14,7 +14,7 @@ const Header = () => {
             </div>
             <div className='text-white'>
                 <MdShoppingCart size={32}/>
-                <div className='h-[15px] w-[15px] rounded-full bg-accent relative -top-8 left-5'></div>
+                <div className='h-[17px] w-[17px] rounded-full bg-accent relative -top-8 left-5 flex items-center justify-center text-[0.7rem]'>0</div>
             </div>
         </div>
         <div className='mt-1'>

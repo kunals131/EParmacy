@@ -9,7 +9,7 @@ module.exports = {
         primary : '#37B9C5',
         background : '#F9FAFA',
         backgroundSecondary : '##FFFFFF',
-        secondary : '#F3F7FB',
+        secondary : '#FFC618',
         secondaryLight : '#FFFAF3',
         accent : '#FF5A5A',
         accentLight : '#E8D8D8',

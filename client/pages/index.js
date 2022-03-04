@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import HeroImage from '../components/HeroImage'
+import HeroImage from '../components/HeroImage';
+import OffersComponent from '../components/OffersComponent';
+import CategoryPreview from '../components/CategoryPreview';
 export default function Home() {
   return (
     <>
@@ -11,7 +13,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeroImage/>
-
+      <OffersComponent/>
+      <CategoryPreview/>
     </>
   )
 }
