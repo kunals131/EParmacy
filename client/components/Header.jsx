@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Header = () => {
   return (
-    <div className='bg-primary p-5'>
+    <div className='bg-primary px-5 py-3'>
         <div className='flex justify-between items-center'>
             <div className='text-white flex items-center space-x-2'>
                 <MdMenu size={35}/>
