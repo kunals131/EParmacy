@@ -14,10 +14,10 @@ const FooterLink = ({title,content})=>{
   }
     </div>{
       open&&<div className='border-[1px] p-2'>
-    <div className='text-sm my-1 py-1  border-b-[1px] border-gray-300'>About Us</div>
-    <div className='text-sm my-1 py-1 border-b-[1px] border-gray-300'>Key Products</div>
-    <div className='text-sm my-1 py-1 border-b-[1px] border-gray-300'>Latest Offers</div>
-    <div className='text-sm my-1 py-1 border-b-[1px] border-gray-300'>Delivery Partners</div>
+    <div className='text-sm text-gray-500 my-1 py-1 border-b-[1px] border-gray-300'>Latest Offers</div>
+    <div className='text-sm text-gray-500 my-1 py-1 border-b-[1px] border-gray-300'>Key Products</div>
+    <div className='text-sm text-gray-500 my-1 py-1 border-b-[1px] border-gray-300'>Delivery Partners</div>
+    <div className='text-sm text-gray-500  my-1 py-1  border-b-[1px] border-gray-300'>About Us</div>
     </div>
 }
   </div>
