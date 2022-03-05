@@ -1,10 +1,10 @@
 import React from 'react'
 import CategoryPreviewComponent from './CategoryPreviewComponent'
 import ProductCard from './ProductCard/ProductCard'
-const CategoryPreview = () => {
+const CategoryPreview = ({heading}) => {
   return (
     <div>
-        <CategoryPreviewComponent heading={"Popular Products"}>
+        <CategoryPreviewComponent heading={heading}>
             <ProductCard></ProductCard>
             <ProductCard></ProductCard>
             <ProductCard></ProductCard>

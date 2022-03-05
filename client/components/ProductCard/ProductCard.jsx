@@ -4,8 +4,8 @@ import {MdShoppingCart} from 'react-icons/md'
 const ProductCard = () => {
     const [counter,setCounter] = useState(0);
   return (
-    <div className='p-3 bg-white w-[190px] border-[1px] border-gray-300 rounded-lg'>
-        <div className='flex justify-end relative -top-3 left-3 '>
+    <div className='py-3 px-2 bg-white w-[180px] border-[1px] border-gray-300 rounded-lg'>
+        <div className='flex justify-end relative -top-3 left-2 '>
             <div className='flex justify-center items-center text-white bg-primary w-[50%]'>10% OFF</div>
         </div>
         <div className='flex justify-center items-center'>

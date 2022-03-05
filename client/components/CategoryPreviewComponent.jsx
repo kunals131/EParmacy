@@ -16,10 +16,10 @@ const CategoryPreviewComponent = ({heading, link,children}) => {
     }
   return (
     <div className='mt-5 py-1'>
-     <div className="mt-5 px-2">
+     <div className="px-2">
       <div className="flex justify-between items-center pr-3">
-        <h1 className="text-grayX text-lg flex items-center space-x-2">
-          <div>{heading}</div>
+        <h1 className="text-grayX flex items-center space-x-2">
+          <div className="font-semibold text-grayX">{heading}</div>
         </h1>
         <div className="text-primary underline text-sm">View All</div>
       </div>

@@ -4,6 +4,8 @@ import styles from '../styles/Home.module.css'
 import HeroImage from '../components/HeroImage';
 import OffersComponent from '../components/OffersComponent';
 import CategoryPreview from '../components/CategoryPreview';
+import CategoryHome from '../components/ShopByCategory/CategoryHome';
+import OrderPrescription from '../components/OrderPrescription';
 export default function Home() {
   return (
     <>
@@ -13,8 +15,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeroImage/>
+      <OrderPrescription/>
       <OffersComponent/>
-      <CategoryPreview/>
+      <CategoryHome/>
+      <CategoryPreview heading="Popular Products"/>
+      <CategoryPreview heading="Seasonal Products"/>
+
+
     </>
   )
 }
