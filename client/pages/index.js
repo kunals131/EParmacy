@@ -20,7 +20,7 @@ export default function Home() {
       </Head>
       <HeroImage/>
       <OrderPrescription/>
-      <OffersComponent/>
+      {/* <OffersComponent/> */}
       <CategoryHome/>
       <CategoryPreview heading="Popular Products"/>
       <CategoryPreview heading="Seasonal Products"/>
