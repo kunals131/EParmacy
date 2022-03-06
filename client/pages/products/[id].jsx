@@ -68,7 +68,7 @@ const Product = () => {
       </div>
       <div className="mt-7">
         <div className="text-xl font-bold text-grayX">Description</div>
-        <DescText className="mt-3 text-gray-600">
+        <DescText className="mt-3 text-sm text-gray-600">
           Nivea Soft Light Moisturising Creme (Beiersdorf AG) Nivea Soft Creme
           treats the skin with a quick-absorbing formula, it keeps you feeling
           fresh at the snap of a finger, so you can get ready in seconds. Enjoy
@@ -88,7 +88,7 @@ const Product = () => {
     </div>
     <div className="mt-7">
     <div className="text-xl font-bold text-grayX">Other Information</div>
-    <DescText className="mt-2">COD available</DescText>
+    <DescText className="mt-2 text-sm">COD available</DescText>
     </div>
     </div>
   );
