@@ -5,6 +5,7 @@ import {MdSearch, MdArrowBack, MdClear} from 'react-icons/md';
 const SearchBar = ({type}) => {
     const [searchMode, setSearchMode] = useState(false);
     const [inputEmpty, setInputEmpty] = useState(true); 
+    const [value,setValue] = useState('');
     const inputRef = useRef();
     const handleSearch = (value)=>{
         setSearchMode(value)
@@ -16,6 +17,7 @@ const SearchBar = ({type}) => {
         else {
             setInputEmpty(true);
         }
+        setValue(e.target.value);
     }
   return (
       <> {
@@ -31,10 +33,10 @@ const SearchBar = ({type}) => {
             <div className='flex space-x-4 w-full'>
                 <div onClick={()=>handleSearch(false)}><MdArrowBack size={25}/></div>
                 <div className='w-full'>
-                    <input ref={inputRef}  onChange={handleChange} className='w-full outline-none' type="text" placeholder='Search for Medicine & health products' />
+                    <input value={value} ref={inputRef}  onChange={handleChange} className='w-full outline-none' type="text" placeholder='Search for Medicine & health products' />
                 </div>
                 {
-                 !inputEmpty&&<MdClear onClick={()=>{inputRef.current?.value=''}} size={25}/>   
+                 !inputEmpty&&<MdClear onClick={()=>setValue('')} size={25}/>   
                 }
             </div>
         </div>
