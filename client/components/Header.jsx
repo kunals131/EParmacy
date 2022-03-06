@@ -1,11 +1,21 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {MdMenu, MdShoppingCart, MdArrowBack} from 'react-icons/md';
 import Image from 'next/image';
 import SearchBar from './Searchbar';
-
+import { useRouter } from 'next/router';
 
 const Header = ({setShowSidebar}) => {
     const [searchType, setSearchType] =  useState('button')
+    const router = useRouter();
+    useEffect(()=>{
+        if (router.pathname!=='/') {
+            setSearchType('button');
+        }
+        else {
+            setSearchType('bar');
+        }
+
+    }, [router.pathname])
 
   return (
       <>
