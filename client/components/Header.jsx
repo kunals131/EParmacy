@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 
 const Header = ({setShowSidebar}) => {
     const [searchType, setSearchType] =  useState('button')
+    const [path,setPath] = useState('/');
     const router = useRouter();
     useEffect(()=>{
         if (router.pathname!=='/') {
@@ -14,8 +15,19 @@ const Header = ({setShowSidebar}) => {
         else {
             setSearchType('bar');
         }
+        setPath(router.pathname);
 
     }, [router.pathname])
+
+    const Heading = ()=>{
+        if (router.pathname==='/cart') {
+            return <div className='font-semibold font-poppins text-lg'>Order Summary</div>
+        }
+        if (router.pathname==='/products') {
+            return <div className='font-semibold font-poppins text-lg'>Products</div>
+        }
+        return <Image src="/mainx.png"height="30px" width="100px"/>
+    }
 
   return (
       <>
@@ -30,7 +42,7 @@ const Header = ({setShowSidebar}) => {
 
 }
                 <div className='mt-1'>
-                <Image src="/mainx.png"height="30px" width="100px"/>
+                    {Heading()}
                 </div>
             </div>
             <div className='text-white flex space-x-2 items-center mt-2 align-center'>

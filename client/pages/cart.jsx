@@ -3,14 +3,14 @@ import Image from "next/image";
 import {MdArrowForward} from 'react-icons/md'
 const CartProduct = () => {
   return (
-    <div className="px-3 py-3 bg-white border-[1px]">
+    <div className="px-3 py-3 border-[1px] border-gray-100">
       <div className="flex space-x-3 items-center">
         <div>
           <Image src="/product/p1.png" height="100px" width="100px" />
         </div>
         <div>
           <div className="">Nivea Body Lotion with a pack of facewash</div>
-          <div className="mt-2 font-bold text-lg">Rs. 256</div>
+          <div className="mt-2 font-semibold text-lg text-accent">Rs. 256 <span><strike className='text-gray-400 ml-2 font-normal text-sm'>475</strike></span></div>
           <div className="text-sm text-green-600">Instock</div>
         </div>
       </div>
@@ -41,7 +41,17 @@ const CartProduct = () => {
 const Cart = () => {
   return (
     <div>
-      <div className="bg-white shadow-sm px-4 py-3 space-y-2">
+      <div className="bg-white px-3 py-2">
+          <div className="text-sm font-semibold text-gray-400">PRODUCTS</div>
+          <div className="space-y-3 mt-2">
+              <CartProduct/>
+              <CartProduct/>
+              <CartProduct/>
+          </div>
+
+      </div>
+
+      <div className="bg-white shadow-sm px-4 mt-5  py-3 space-y-2">
         <div className="flex justify-between items-center">
           <div>Subtotal</div>
           <div>Rs. 256</div>
@@ -72,11 +82,6 @@ const Cart = () => {
         <div className="flex justify-center items-center font-bold bg-primary py-3 rounded-md text-white ">
           Proceed to Buy (3 items)
         </div>
-      </div>
-      <div className="px-2 mt-5 space-y-3 bg-white">
-          <CartProduct/>
-          <CartProduct/>
-          <CartProduct/>
       </div>
       <div className="px-4 py-2 mt-4 bg-white">
           <div className="flex border-t-[1px] border-b-[1px] py-2 justify-between items-center text-gray">
