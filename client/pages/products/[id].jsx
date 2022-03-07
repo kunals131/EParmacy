@@ -36,11 +36,11 @@ const CategoryModal = ({close})=>{
       </div>
       <div className="mt-7 space-y-2">
       <div className="px-1 py-3 border-[1px]">
-        <div className="font-semibold" onClick={close}><Link href="/products/1233">Nivea soft product 2</Link> </div>
+        <div className="font-semibold" ><Link href="/products/1233" onClick={close}>Nivea soft product 2</Link> </div>
         <div className="text-sm">2500/bottle</div>
       </div>
       <div className="px-1 py-3 border-[1px]">
-        <div className="font-semibold" onClick={close}><Link href="/products">Nivea soft product 2</Link></div>
+        <div className="font-semibold" ><Link href="/products" onClick={close}>Nivea soft product 2</Link></div>
         <div className="text-sm">2500/bottle</div>
       </div>
       </div>
