@@ -1,6 +1,7 @@
 import React, {useState} from "react";
-import { MdShare } from "react-icons/md";
+import { MdShare, MdClear } from "react-icons/md";
 import Image from "next/image";
+import Link from "next/link";
 import ProductListCard from "../../components/ProductCard/ProductListCard";
 const DescText = ({children, className})=>{
     const text=  children;
@@ -24,8 +25,37 @@ const DescText = ({children, className})=>{
 
 }
 
-const Product = () => {
+const CategoryModal = ({close})=>{
+
   return (
+  <div onClick={close} className="bg-[rgba(0,0,0,0.73)] z-[50] flex justify-center items-center fixed top-0 left-0 h-screen w-screen ">
+    <div onClick={(e)=>e.stopPropagation()} className="bg-white rounded-xl p-3 w-[85%]">
+      <div className="flex justify-between items-center">
+        <div>Smiliar to Nivea..</div>
+        <div onClick={close}><MdClear size={26}/></div>
+      </div>
+      <div className="mt-7 space-y-2">
+      <div className="px-1 py-3 border-[1px]">
+        <div className="font-semibold" onClick={close}><Link href="/products/1233">Nivea soft product 2</Link> </div>
+        <div className="text-sm">2500/bottle</div>
+      </div>
+      <div className="px-1 py-3 border-[1px]">
+        <div className="font-semibold" onClick={close}><Link href="/products">Nivea soft product 2</Link></div>
+        <div className="text-sm">2500/bottle</div>
+      </div>
+      </div>
+    </div>
+  </div>
+  );
+}
+
+
+const Product = ({prescriptionRequired}) => {
+  const [modal,setModal] = useState(false);
+
+  return (
+    <>
+    {modal&&<CategoryModal close={()=>setModal(false)}/>}
     <div className="p-4 bg-white ">
       <div className="flex justify-between">
         <div className="text-xl font-poppins text-grayX">
@@ -78,19 +108,22 @@ const Product = () => {
         </DescText>
       </div>
       <div className="mt-7">
-      <div className="text-xl font-bold text-grayX">Alternate Products</div>
-      <div className="mt-2 flex-col space-x-3">
-          <ProductListCard/>
-          <ProductListCard/>
-          <ProductListCard/>
-      </div>
-      <div className="text-center text-primary mt-2 font-semibold">View All</div>
+        <div className="m-auto bg-[#37b9c531] rounded-md px-2 py-5">
+          <h1 className="font-semibold " onClick={()=>setModal(true)}>More from this category {">"}</h1>
+          <div className="mt-3">
+            <div>
+              <div className="text-accent">Eplipsa 500mg/5ml injection</div>
+              <div className="text-sm text-grayX">Rs. 2524/bottle</div>
+            </div>
+          </div>
+        </div>
     </div>
     <div className="mt-7">
     <div className="text-xl font-bold text-grayX">Other Information</div>
     <DescText className="mt-2 text-sm">COD available</DescText>
     </div>
     </div>
+    </>
   );
 };
 

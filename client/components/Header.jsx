@@ -22,7 +22,7 @@ const Header = ({setShowSidebar}) => {
 
     <div className='bg-primary px-4 py-2'>
         <div className='flex justify-between items-center'>
-            <div className='text-white flex items-center items-center space-x-2'>
+            <div className='text-white flex items-center space-x-2'>
                 {
                     searchType==='bar'?
                 <MdMenu onClick={()=>setShowSidebar(true)} size={30}/>:
