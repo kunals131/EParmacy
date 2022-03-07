@@ -23,7 +23,6 @@ const Layout = ({children}) => {
     }
   return (
     <>
-
     {showSidebar&&<Sidebar setShowSidebar={setShowSidebar}/>}
     <Header setShowSidebar={setShowSidebar}></Header>
     {children}

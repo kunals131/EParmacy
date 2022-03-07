@@ -26,7 +26,7 @@ const FooterLink = ({title,content})=>{
 
 const Footer = () => {
   return (
-    <div className='bg-white mt-9 pt-4 px-5'>
+    <div className='bg-white mt-1 pt-4 px-5'>
       <div>
         <FooterLink title="Our Services"/>
         <FooterLink title="Top Categories"/>
@@ -55,7 +55,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className='my-5 text-gray-600 text-sm'>2022 Ravi Medical Store. All Rights Reserved</div>
+      <div className='py-5 text-gray-600 text-sm'>2022 Ravi Medical Store. All Rights Reserved</div>
     </div>
   )
 }

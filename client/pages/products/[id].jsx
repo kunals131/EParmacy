@@ -58,8 +58,13 @@ const Product = ({prescriptionRequired}) => {
     {modal&&<CategoryModal close={()=>setModal(false)}/>}
     <div className="p-4 bg-white ">
       <div className="flex justify-between">
-        <div className="text-xl font-poppins text-grayX">
+        <div>
+          <div className="text-xl font-poppins text-grayX">
           Nivea Soft Light Mosturizer and protection Face wash
+          </div>
+          {
+            prescriptionRequired&&<div className="bg-[#37b9c52f] text-grayX rounded-md px-3 py-1 w-fit mt-3 text-xs font-semibold">Prescription Required</div>
+          }
         </div>
         <div>
           <MdShare className="text-grayX" size={22}></MdShare>
