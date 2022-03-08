@@ -26,6 +26,9 @@ const Header = ({setShowSidebar}) => {
         if (router.pathname==='/products') {
             return <div className='font-semibold font-poppins text-lg'>Products</div>
         }
+        if (router.pathname==='/categories') {
+            return <div className='font-semibold font-poppins text-lg'>Categories</div>
+        }
         return <Image src="/mainx.png"height="30px" width="100px"/>
     }
 
