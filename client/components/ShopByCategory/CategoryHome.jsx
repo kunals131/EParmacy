@@ -13,7 +13,7 @@ const CategoryCard = ({title,img,link})=>{
 
 const CategoryHome = () => {
   return (
-    <div className=' mt-7 px-3 text-grayX '>
+    <div className=' mt-7 px-3 text-grayX lg:hidden'>
       <div className='font-semibold'>Shop by Category</div>
       <div className='text-sm text-gray-500'>Explore through our various categories</div>
       <div className='grid grid-cols-3 gap-4 mt-5 px-1'>

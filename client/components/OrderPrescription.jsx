@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 const OrderPrescription = () => {
   return (
-    <div className="bg-white shadow-sm px-4 py-4 mt-3 w-[95%] m-auto items-center flex justify-between">
+    <div className="bg-white shadow-sm px-4 py-4 mt-3 lg:hidden w-[95%] m-auto items-center flex justify-between">
       <div>
         <div className="text-sm">Quickly Order with Prescription</div>
         <p className="text-[0.7rem] text-grayX w-[80%] mt-2">

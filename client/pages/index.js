@@ -7,6 +7,7 @@ import CategoryPreview from '../components/CategoryPreview';
 import CategoryHome from '../components/ShopByCategory/CategoryHome';
 import Sidebar from '../components/Sidebar';
 import OrderPrescription from '../components/OrderPrescription';
+import DekstopComponents from '../components/DekstopComponents';
 import {useState} from 'react';
 export default function Home() {
 
@@ -19,11 +20,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeroImage/>
+      <div className='lg:px-20'>
+      <div className='hidden lg:block'>
+      <DekstopComponents></DekstopComponents>
+      </div>
       <OrderPrescription/>
-      {/* <OffersComponent/> */}
+      <OffersComponent/>
       <CategoryHome/>
       <CategoryPreview heading="Popular Products"/>
       <CategoryPreview heading="Seasonal Products"/>
+      </div>
 
 
     </>

@@ -8,24 +8,17 @@ import Sidebar from './Sidebar';
 
 
 const Layout = ({children}) => {
-    const [width,setWidth] = useState(0);
+
     const [showSidebar, setShowSidebar] = useState(false);
-    useEffect(()=>{
-        setWidth(window.innerWidth);
-    }, [])
-    if (width>750) {
-      console.log(width)
-        return (
-            <>
-            <UnderConstruction></UnderConstruction>
-            </>
-        )
-    }
+   
   return (
     <>
+    
     {showSidebar&&<Sidebar setShowSidebar={setShowSidebar}/>}
     <Header setShowSidebar={setShowSidebar}></Header>
+    <div className='max-w-[1800px] m-auto'>
     {children}
+    </div>
     <Footer></Footer>
     </>
   )

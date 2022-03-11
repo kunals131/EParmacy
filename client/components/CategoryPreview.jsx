@@ -10,6 +10,9 @@ const CategoryPreview = ({heading}) => {
             <ProductCard></ProductCard>
             <ProductCard></ProductCard>
             <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
         </CategoryPreviewComponent>
     </div>
   )
