@@ -68,7 +68,7 @@ const Header = ({setShowSidebar}) => {
                 </div>
             </div>
             <div className='hidden lg:block'>
-                <input className='w-[720px] ml-5 rounded-md h-[40px] p-3 text-sm' type="text" placeholder='Search for medicine' />
+                <input className='w-[730px] ml-5 rounded-md h-[40px] p-3 text-sm' type="text" placeholder='Search for medicine' />
             </div>
             <div className='hidden lg:block text-white'>
                 <div className='flex space-x-10'>
@@ -82,7 +82,7 @@ const Header = ({setShowSidebar}) => {
                 </div>
                 <div className='flex items-center space-x-1'>
                     <div><RiShieldUserFill size={27}/></div>
-                    <div className='font-semibold'>Login / Signup</div>
+                    <div className='font-semibold'>User</div>
                 </div>
                 </div>
             </div>
