@@ -48,7 +48,7 @@ const Footer = () => {
             <Image src={"/main.png"} height="55px" width="165px" />
           </div>
           <div className="w-[60%] text-gray-500 ">
-            RavimedicalStore, Pakistan's favourite and trusted pharmacy with over 15 years of experience in 
+            RavimedicalStore, Pakistan {"'"} favourite and trusted pharmacy with over 15 years of experience in 
             dispensing quality medicines.
           </div>
         </div>
