@@ -12,13 +12,13 @@ const DekstopHeader = ({className})=>{
     </div>
 }
 
-const HeaderItem = ({title,link})=>{
+const HeaderItem = ({title,link, className})=>{
     const router = useRouter();
     const active = router.pathname===link;
     return (
         <div className='group'>
-            <Link href={link}>{title}</Link>
-            <div className={`h-[2px] ${active&&'scale-100'}  scale-0 group-hover:scale-75 transition-all bg-white`}></div>
+            <Link href={link}><a className={className}>{title}</a></Link>
+            <div className={`h-[2px] ${active&&'scale-75'}  scale-0 group-hover:scale-75 transition-all bg-white`}></div>
         </div>
     )
 }
@@ -54,7 +54,7 @@ const Header = ({setShowSidebar}) => {
   return (
       <>
 
-    <div className='bg-primary px-4 py-2 lg:px-14 lg:py-6 md:py-5'>
+    <div className='bg-primary px-4 py-2 lg:px-3 3xl:px-5 4xl:px-12 lg:py-6 md:py-5'>
         <div className='flex justify-between items-center'>
             <div className='text-white flex items-center  space-x-2'>
                 {
@@ -65,7 +65,10 @@ const Header = ({setShowSidebar}) => {
 }
                 <div className='mt-1'>
                     <div className='lg:hidden'>{Heading()}</div>
-                    <div className='hidden lg:block'>
+                    <div className='hidden lg:block 3xl:hidden'>
+                    <Image src="/mainx.png"height="30px" width="100px"/>
+                    </div>
+                    <div className='hidden 3xl:block'>
                     <Image src="/mainx.png"height="35px" width="120px"/>
                     </div>
                 </div>
@@ -83,29 +86,29 @@ const Header = ({setShowSidebar}) => {
                 </div>
             </div>
             <div className='hidden lg:block'>
-                <div className='flex space-x-5 text-white font-semibold'>
-                <HeaderItem title="Home" link={"/"}/>
-                <HeaderItem title="Categories" link={"/categories"}/>
-                <HeaderItem title="About Us" link={"/about"}/>
-                <HeaderItem title="Contact Us" link={"/contact"}/>
+                <div className='flex space-x-4 text-white font-semibold'>
+                <HeaderItem className="text-sm xl:text-base" title="Home" link={"/"}/>
+                <HeaderItem className="text-sm xl:text-base" title="Categories" link={"/categories"}/>
+                <HeaderItem className="text-sm xl:text-base" title="About Us" link={"/about"}/>
+                <HeaderItem className="text-sm xl:text-base lg:hidden xl:block" title="Contact Us" link={"/contact"}/>
                 </div>
             </div>
             <div className='hidden lg:block'>
-                <input className='w-[500px] ml-5 rounded-md h-[40px] p-3 text-sm' type="text" placeholder='Search for medicine' />
+                <input className='w-[330px] xl:w-[360px] 2xl:w-[420px] 3xl:w-[500px] ml-5 rounded-md h-[40px] p-3 text-sm' type="text" placeholder='Search for medicine' />
             </div>
             <div className='hidden lg:block text-white'>
-                <div className='flex space-x-10'>
+                <div className='flex space-x-5 xl:space-x-7 2xl:space-x-9'>
                 <div className='flex items-center space-x-1'>
                     <div><RiFileList3Fill size={20}/></div>
-                    <div className='font-semibold cursor-pointer'>Upload</div>
+                    <div className='font-semibold cursor-pointer text-sm xl:text-base'>Upload</div>
                 </div>
                 <div className='flex items-center space-x-1'>
                     <div><RiShoppingCartFill size={27}/></div>
-                    <div className='font-semibold cursor-pointer'>Cart</div>
+                    <div className='font-semibold cursor-pointer text-sm xl:text-base'>Cart</div>
                 </div>
                 <div className='flex items-center space-x-1'>
                     <div><RiShieldUserFill size={27}/></div>
-                    <div className='font-semibold cursor-pointer'>User</div>
+                    <div className='font-semibold cursor-pointer text-sm xl:text-base'>User</div>
                 </div>
                 </div>
             </div>

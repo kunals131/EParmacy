@@ -19,7 +19,12 @@ module.exports = {
       fontFamily : {
         poppins : ['Poppins','san-serif'],
         lato : ['Lato','san-serif']
-
+    },
+      screens : {
+        'xl' : '1100px',
+        '2xl' : '1250px',
+        '3xl' : '1370px', 
+        '4xl' : '1400px'
       }
     },
   },
