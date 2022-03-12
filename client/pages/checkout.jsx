@@ -72,7 +72,7 @@ const Checkout = ({ prescription }) => {
       </div>
       <div>
         <div className="font-semibold mt-7 text-xl">Shipping Details</div>
-        <div className="text-sm mt-1 text-grayX">
+        <div className="text-xs mt-2 text-grayX">
           Add new address or continue with the previously saved address.
         </div>
         <div className="bg-white mt-4">
@@ -81,7 +81,7 @@ const Checkout = ({ prescription }) => {
         <div className="underline text-accent ml-1 mt-1 text-sm">Add New</div>
       </div>
       <div>
-        <div className="font-semibold mt-7 text-xl">Payment Method</div>
+        <div className="font-semibold mt-8 text-xl">Payment Method</div>
         <div className="mt-4 space-y-2">
           <div>
             <PaymentItem
@@ -107,12 +107,12 @@ const Checkout = ({ prescription }) => {
         </div>
       </div>
       <div>
-      <div className="font-semibold mt-7 text-xl">Prescription Required</div>
-      <div className="text-sm mt-2 text-grayX">
+      <div className="font-semibold mt-8 text-xl">Prescription Required</div>
+      <div className="text-xs  mt-3 text-grayX">
           Require Prescription for following products
             <div>medicine 1 30mg, medicine 2 30mg</div>
         </div>
-        <div className="mt-3 flex space-x-3">
+        <div className="mt-5 flex space-x-3">
           <div className="bg-white px-2 text-sm py-2 w-fit rounded-md border-[1px]">Choose from previous prescriptions</div>
           <div className="bg-white px-2 py-2 text-sm w-fit rounded-md border-[1px] text-primary">Add New </div>
         </div>

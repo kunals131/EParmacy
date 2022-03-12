@@ -4,11 +4,23 @@ import {RiFileList3Fill, RiShoppingCartFill, RiShieldUserFill} from 'react-icons
 import Image from 'next/image';
 import SearchBar from './Searchbar';
 import { useRouter } from 'next/router';
+import Link from 'next/link'
 
 const DekstopHeader = ({className})=>{
     <div className={`${className}`}>
 
     </div>
+}
+
+const HeaderItem = ({title,link})=>{
+    const router = useRouter();
+    const active = router.pathname===link;
+    return (
+        <div className='group'>
+            <Link href={link}>{title}</Link>
+            <div className={`h-[2px] ${active&&'scale-100'}  scale-0 group-hover:scale-75 transition-all bg-white`}></div>
+        </div>
+    )
 }
 
 const Header = ({setShowSidebar}) => {
@@ -42,17 +54,20 @@ const Header = ({setShowSidebar}) => {
   return (
       <>
 
-    <div className='bg-primary px-4 py-2 lg:px-28 md:py-5'>
+    <div className='bg-primary px-4 py-2 lg:px-14 lg:py-6 md:py-5'>
         <div className='flex justify-between items-center'>
             <div className='text-white flex items-center  space-x-2'>
                 {
                     searchType==='bar'?
                 <MdMenu className='lg:hidden' onClick={()=>setShowSidebar(true)} size={30}/>:
-                <MdArrowBack  size={30}/>
+                <MdArrowBack className='lg:hidden'  size={30}/>
 
 }
                 <div className='mt-1'>
-                    {Heading()}
+                    <div className='lg:hidden'>{Heading()}</div>
+                    <div className='hidden lg:block'>
+                    <Image src="/mainx.png"height="35px" width="120px"/>
+                    </div>
                 </div>
             </div>
             <div className='text-white lg:hidden flex space-x-2 items-center mt-2 align-center'>
@@ -68,21 +83,29 @@ const Header = ({setShowSidebar}) => {
                 </div>
             </div>
             <div className='hidden lg:block'>
-                <input className='w-[730px] ml-5 rounded-md h-[40px] p-3 text-sm' type="text" placeholder='Search for medicine' />
+                <div className='flex space-x-5 text-white font-semibold'>
+                <HeaderItem title="Home" link={"/"}/>
+                <HeaderItem title="Categories" link={"/categories"}/>
+                <HeaderItem title="About Us" link={"/about"}/>
+                <HeaderItem title="Contact Us" link={"/contact"}/>
+                </div>
+            </div>
+            <div className='hidden lg:block'>
+                <input className='w-[500px] ml-5 rounded-md h-[40px] p-3 text-sm' type="text" placeholder='Search for medicine' />
             </div>
             <div className='hidden lg:block text-white'>
                 <div className='flex space-x-10'>
                 <div className='flex items-center space-x-1'>
                     <div><RiFileList3Fill size={20}/></div>
-                    <div className='font-semibold'>Upload</div>
+                    <div className='font-semibold cursor-pointer'>Upload</div>
                 </div>
                 <div className='flex items-center space-x-1'>
                     <div><RiShoppingCartFill size={27}/></div>
-                    <div className='font-semibold'>Cart</div>
+                    <div className='font-semibold cursor-pointer'>Cart</div>
                 </div>
                 <div className='flex items-center space-x-1'>
                     <div><RiShieldUserFill size={27}/></div>
-                    <div className='font-semibold'>User</div>
+                    <div className='font-semibold cursor-pointer'>User</div>
                 </div>
                 </div>
             </div>

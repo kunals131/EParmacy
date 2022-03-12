@@ -42,7 +42,7 @@ const DekstopFooter = () => {};
 const Footer = () => {
   return (
     <>
-      <div className="hidden lg:block bg-white mt-1 py-10  px-20">
+      <div className="hidden lg:block bg-white mt-5 py-10  px-20">
         <div className="flex items-center space-x-24">
           <div className="">
             <Image src={"/main.png"} height="55px" width="165px" />

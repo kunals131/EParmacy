@@ -30,7 +30,35 @@ export default function Home() {
       <CategoryPreview heading="Popular Products"/>
       <CategoryPreview heading="Seasonal Products"/>
       </div>
+      <div className='hidden lg:block'>
+        <div className='flex bg-primary mt-10 shadow-md'>
+          <div className='flex-1 p-16'>
+          <div className='text-3xl text-white font-semibold font-poppins'>Medicine at your Door Step{","}</div>
+            <div className='text-3xl text-white font-semibold font-poppins'>from your favourite Online Pharmacy.</div>
+            <div className='mt-16 text-white font-normal font-poppins'>Download App for free</div>
+            <div className='flex space-x-2 mt-4'>
+            <div>
+                <Image
+                  src="/footerImages/appstore.png"
+                  height="45px"
+                  width="140px"
+                />
+              </div>
+              <div>
+                <Image
+                  src="/footerImages/playstore.png"
+                  height="45px"
+                  width="140px"
+                />
+              </div>
+            </div>
 
+          </div>
+          <div className='h-auto w-[650px]' style={{background : "url('/app.svg') center center/cover"}}>
+            
+        </div>
+        </div>
+      </div>
 
     </>
   )
