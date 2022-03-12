@@ -54,7 +54,7 @@ const Header = ({setShowSidebar}) => {
   return (
       <>
 
-    <div className='bg-primary px-4 py-2 lg:px-3 3xl:px-5 4xl:px-12 lg:py-6 md:py-5'>
+    <div className='bg-primary px-4 py-2 lg:px-3 xl:px-4 3xl:px-5 4xl:px-12 lg:py-6 md:py-5'>
         <div className='flex justify-between items-center'>
             <div className='text-white flex items-center  space-x-2'>
                 {
@@ -86,11 +86,11 @@ const Header = ({setShowSidebar}) => {
                 </div>
             </div>
             <div className='hidden lg:block'>
-                <div className='flex space-x-4 text-white font-semibold'>
-                <HeaderItem className="text-sm xl:text-base" title="Home" link={"/"}/>
-                <HeaderItem className="text-sm xl:text-base" title="Categories" link={"/categories"}/>
-                <HeaderItem className="text-sm xl:text-base" title="About Us" link={"/about"}/>
-                <HeaderItem className="text-sm xl:text-base lg:hidden xl:block" title="Contact Us" link={"/contact"}/>
+                <div className='flex space-x-4 xl:space-x-5 text-white font-semibold'>
+                <HeaderItem className="text-sm 2xl:text-base" title="Home" link={"/"}/>
+                <HeaderItem className="text-sm 2xl:text-base" title="Categories" link={"/categories"}/>
+                <HeaderItem className="text-sm 2xl:text-base" title="About Us" link={"/about"}/>
+                <HeaderItem className="text-sm 2xl:text-base lg:hidden xl:inline" title="Contact Us" link={"/contact"}/>
                 </div>
             </div>
             <div className='hidden lg:block'>
@@ -100,15 +100,15 @@ const Header = ({setShowSidebar}) => {
                 <div className='flex space-x-5 xl:space-x-7 2xl:space-x-9'>
                 <div className='flex items-center space-x-1'>
                     <div><RiFileList3Fill size={20}/></div>
-                    <div className='font-semibold cursor-pointer text-sm xl:text-base'>Upload</div>
+                    <div className='font-semibold cursor-pointer text-sm 2xl:text-base'>Upload</div>
                 </div>
                 <div className='flex items-center space-x-1'>
                     <div><RiShoppingCartFill size={27}/></div>
-                    <div className='font-semibold cursor-pointer text-sm xl:text-base'>Cart</div>
+                    <div className='font-semibold cursor-pointer text-sm 2xl:text-base'>Cart</div>
                 </div>
                 <div className='flex items-center space-x-1'>
                     <div><RiShieldUserFill size={27}/></div>
-                    <div className='font-semibold cursor-pointer text-sm xl:text-base'>User</div>
+                    <div className='font-semibold cursor-pointer text-sm 2xl:text-base'>User</div>
                 </div>
                 </div>
             </div>

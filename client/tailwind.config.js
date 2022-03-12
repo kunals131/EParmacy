@@ -21,7 +21,7 @@ module.exports = {
         lato : ['Lato','san-serif']
     },
       screens : {
-        'xl' : '1100px',
+        'xl' : '1120px',
         '2xl' : '1250px',
         '3xl' : '1370px', 
         '4xl' : '1400px'
