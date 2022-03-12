@@ -32,10 +32,10 @@ export default function Home() {
       </div>
       <div className='hidden lg:block'>
         <div className='flex bg-primary mt-10 shadow-md'>
-          <div className='flex-1 p-16'>
-          <div className='text-3xl text-white font-semibold font-poppins'>Medicine at your Door Step{","}</div>
-            <div className='text-3xl text-white font-semibold font-poppins'>from your favourite Online Pharmacy.</div>
-            <div className='mt-16 text-white font-normal font-poppins'>Download App for free</div>
+          <div className='flex-1 2xl:p-16 lg:p-12'>
+          <div className='2xl:text-3xl lg:text-lg lg:font-normal text-white 2xl:font-semibold font-poppins'>Medicine at your Door Step{","}</div>
+            <div className='2xl:text-3xl lg:text-lg text-white font-semibold 2xl:font-poppins'>from your favourite Online Pharmacy.</div>
+            <div className='2xl:mt-16 lg:mt-8 text-white font-normal font-poppins'>Download App for free</div>
             <div className='flex space-x-2 mt-4'>
             <div>
                 <Image
@@ -54,7 +54,7 @@ export default function Home() {
             </div>
 
           </div>
-          <div className='h-auto w-[650px]' style={{background : "url('/app.svg') center center/cover"}}>
+          <div className='h-auto w-[45vw]' style={{background : "url('/app.svg') center center/cover"}}>
             
         </div>
         </div>
