@@ -45,7 +45,7 @@ const Footer = () => {
       <div className="hidden lg:block bg-white mt-5 py-10  px-20">
         <div className="flex items-center space-x-24">
           <div className="">
-            <Image src={"/main.png"} height="55px" width="165px" />
+            <Image src={"/logoHeader.png"} height="55px" width="165px" />
           </div>
           <div className="w-[60%] text-gray-500 ">
             RavimedicalStore, Pakistan {"'"} favourite and trusted pharmacy with over 15 years of experience in 
