@@ -25,7 +25,7 @@ export default function Home() {
       <DekstopComponents></DekstopComponents>
       </div>
       <OrderPrescription/>
-      <OffersComponent/>
+
       <CategoryHome/>
       <CategoryPreview heading="Popular Products"/>
       <CategoryPreview heading="Seasonal Products"/>

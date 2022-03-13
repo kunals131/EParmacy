@@ -2,6 +2,7 @@ import React from 'react'
 import CategoryPreviewComponent from './CategoryPreviewComponent'
 import HomeCard from './HomeCard'
 import {TiStarFullOutline,TiStarHalfOutline} from 'react-icons/ti'
+import OffersComponent from './OffersComponent'
 
 const DekstopComponents = () => {
   return (
@@ -15,6 +16,7 @@ const DekstopComponents = () => {
               <div><TiStarHalfOutline size={28} className='text-[#FFC618]'/></div>
           </div>
       </div>
+      <OffersComponent/>
       <div>
           <CategoryPreviewComponent heading={"Shop By Category"}>
               <HomeCard></HomeCard>

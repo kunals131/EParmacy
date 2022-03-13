@@ -115,8 +115,8 @@ const ProductDekstop = () => {
                   </div>
                 </div>
               )}
-              {tags.map((tag) => (
-                <div className="py-[2px] px-2 2xl:text-sm text-xs bg-gray-200 text-gray-600 2xl:text-gray-500 rounded-md w-fit">
+              {tags.map((tag,idx) => (
+                <div key={idx} className="py-[2px] px-2 2xl:text-sm text-xs bg-gray-200 text-gray-600 2xl:text-gray-500 rounded-md w-fit">
                   {tag}
                 </div>
               ))}
