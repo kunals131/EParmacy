@@ -14,11 +14,14 @@ const DekstopHeader = ({className})=>{
 
 const HeaderItem = ({title,link, className})=>{
     const router = useRouter();
-    const active = router.pathname===link;
+    const [active,setActive] = useState(router.pathname===link);
+    useEffect(()=>{
+        setActive(router.pathname===link);
+    }, [router.pathname])
     return (
         <div className='group'>
             <Link href={link}><a className={className}>{title}</a></Link>
-            <div className={`h-[2px] ${active&&'scale-75'}  scale-0 group-hover:scale-75 transition-all bg-primary`}></div>
+            <div className={`h-[2px] ${active?'scale-95':''}  scale-0 group-hover:scale-75 transition-all bg-primary`}></div>
         </div>
     )
 }
@@ -54,7 +57,7 @@ const Header = ({setShowSidebar}) => {
   return (
       <>
 
-    <div className='lg:bg-background lg:shadow-md px-4 py-2 lg:px-3 xl:px-4 3xl:px-5 4xl:px-12 lg:py-6 md:py-5'>
+    <div className='lg:bg-background bg-primary lg:shadow-md px-4 py-2 lg:px-3 xl:px-4 3xl:px-5 4xl:px-12 lg:py-6 md:py-5'>
         <div className='flex justify-between items-center'>
             <div className='text-white flex items-center  space-x-2'>
                 {
@@ -66,7 +69,7 @@ const Header = ({setShowSidebar}) => {
                 <div className='mt-1'>
                     <div className='lg:hidden'>{Heading()}</div>
                     <div className='hidden lg:block 3xl:hidden'>
-                    <Image src="/mainx.png"height="30px" width="100px"/>
+                    <Image src="/logoHeader.png"height="30px" width="100px"/>
                     </div>
                     <div className='hidden 3xl:block'>
                     <Image src="/logoHeader.png"height="40px" width="130px"/>
@@ -87,7 +90,7 @@ const Header = ({setShowSidebar}) => {
             </div>
             <div className='hidden lg:block'>
                 <div className='flex space-x-4 xl:space-x-5 lg:text-black text-white font-semibold'>
-                <HeaderItem className="text-sm 2xl:text-base" title="Home" link={"/"}/>
+                <HeaderItem className="text-sm 2xl:text-base" title="Home" link="/"/>
                 <HeaderItem className="text-sm 2xl:text-base" title="Categories" link={"/categories"}/>
                 <HeaderItem className="text-sm 2xl:text-base" title="About Us" link={"/about"}/>
                 <HeaderItem className="text-sm 2xl:text-base lg:hidden xl:inline" title="Contact Us" link={"/contact"}/>
@@ -98,15 +101,15 @@ const Header = ({setShowSidebar}) => {
             </div>
             <div className='hidden lg:block text-white lg:text-black'>
                 <div className='flex space-x-5 xl:space-x-7 2xl:space-x-9 3xl:space-x-12'>
-                <div className='flex items-center space-x-1'>
+                <div className='flex items-center space-x-2'>
                     <div><RiFileList3Fill size={20}/></div>
                     <div className='font-semibold cursor-pointer text-sm 2xl:text-base'>Upload</div>
                 </div>
-                <div className='flex items-center space-x-1'>
+                <div className='flex items-center space-x-2'>
                     <div><RiShoppingCartFill size={27}/></div>
                     <div className='font-semibold cursor-pointer text-sm 2xl:text-base'>Cart</div>
                 </div>
-                <div className='flex items-center space-x-1'>
+                <div className='flex items-center space-x-2'>
                     <div><RiShieldUserFill size={27}/></div>
                     <div className='font-semibold cursor-pointer text-sm 2xl:text-base'>User</div>
                 </div>

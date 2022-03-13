@@ -191,8 +191,8 @@ const Products = () => {
           </div>
           <div className="xl:bg-white xl:mt-5 xl:p-5 xl:rounded-md">
             <div className="text-grayX xl:font-semibold">All Products</div>
-            <hr className=" mt-4" />
-            <div className="space-y-2 xl:space-y-0 xl:grid xl:grid-cols-3 3xl:grid-cols-4 xl:gap-3 3xl:gap-4 xl:p-2">
+            <hr className=" my-4" />
+            <div className="space-y-2 lg:space-y-0 xl:grid lg:grid lg:grid-cols-3 xl:grid-cols-3 3xl:grid-cols-4 lg:gap-3 3xl:gap-4 xl:p-2">
               <ProductListCard />
               <ProductListCard />
               <ProductListCard />
