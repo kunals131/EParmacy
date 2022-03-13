@@ -230,7 +230,6 @@ const ProductDekstop = () => {
           </div>
           <div className="space-y-5">
               <MoreFromCategory title="More from this Category"/>
-              <MoreFromCategory title="Customers also Bought"/>
           </div>
         </div>
       </div>
