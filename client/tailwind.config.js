@@ -18,7 +18,8 @@ module.exports = {
       },
       fontFamily : {
         poppins : ['Poppins','san-serif'],
-        lato : ['Lato','san-serif']
+        lato : ['Lato','san-serif'],
+        default : ['Open Sans', 'sans-serif']
     },
       screens : {
         'xl' : '1120px',
