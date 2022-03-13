@@ -168,8 +168,8 @@ const ProductDekstop = () => {
           </div>
         </div>
       </div>
-      <div className="mt-6 2xl:px-24  px-10">
-        <div className="flex 2xl:space-x-10 3xl:space-x-16">
+      <div className="mt-6 2xl:px-24 px-10">
+        <div className="flex 2xl:space-x-10 space-x-10 3xl:space-x-16">
           <div className="bg-white text-gray-700 p-8 h-fit 2xl:w-[50vw] w-[55vw]">
             <div className="text-lg 2xl:text-xl">
               Information about Nivea Soft Light Moisturiser and 1mg Germ
