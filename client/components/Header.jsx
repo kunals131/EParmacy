@@ -111,7 +111,7 @@ const Header = ({setShowSidebar}) => {
                 </div>
                 <div className='flex items-center space-x-2'>
                     <div><RiShieldUserFill size={27}/></div>
-                    <div className='font-semibold cursor-pointer text-sm 2xl:text-base'>User</div>
+                    <div className='font-semibold cursor-pointer text-sm 2xl:text-base' onClick={()=>router.push('?login=true', undefined,{shallow : true})}>User</div>
                 </div>
                 </div>
             </div>
