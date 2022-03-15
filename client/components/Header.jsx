@@ -19,10 +19,12 @@ const HeaderItem = ({title,link, className})=>{
         setActive(router.pathname==link);
     }, [router.pathname])
     return (
-        <div className='group'>
-            <Link href={link}><a className={className}>{title}</a></Link>
+        <Link href={link}>
+        <div className='group cursor-pointer'>
+          <a className={className}>{title}</a>
             <div className={`h-[2px] ${active?'scale-100':''}  scale-0 group-hover:scale-75 transition-all bg-primary`}></div>
         </div>
+        </Link>
     )
 }
 
