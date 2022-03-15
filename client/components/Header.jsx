@@ -14,14 +14,14 @@ const DekstopHeader = ({className})=>{
 
 const HeaderItem = ({title,link, className})=>{
     const router = useRouter();
-    const [active,setActive] = useState(router.pathname===link);
+    const [active,setActive] = useState(router.pathname==link);
     useEffect(()=>{
-        setActive(router.pathname===link);
+        setActive(router.pathname==link);
     }, [router.pathname])
     return (
         <div className='group'>
             <Link href={link}><a className={className}>{title}</a></Link>
-            <div className={`h-[2px] ${active?'scale-95':''}  scale-0 group-hover:scale-75 transition-all bg-primary`}></div>
+            <div className={`h-[2px] ${active?'scale-100':''}  scale-0 group-hover:scale-75 transition-all bg-primary`}></div>
         </div>
     )
 }
@@ -89,7 +89,7 @@ const Header = ({setShowSidebar}) => {
                 </div>
             </div>
             <div className='hidden lg:block'>
-                <div className='flex space-x-4 xl:space-x-5 lg:text-black text-white font-semibold'>
+                <div className='flex space-x-4 xl:space-x-5 lg:text-black text-white font-sans font-[600]'>
                 <HeaderItem className="text-sm 2xl:text-base" title="Home" link="/"/>
                 <HeaderItem className="text-sm 2xl:text-base" title="Categories" link={"/categories"}/>
                 <HeaderItem className="text-sm 2xl:text-base" title="About Us" link={"/about"}/>
@@ -101,17 +101,17 @@ const Header = ({setShowSidebar}) => {
             </div>
             <div className='hidden lg:block text-white lg:text-black'>
                 <div className='flex space-x-5 xl:space-x-7 2xl:space-x-9 3xl:space-x-12'>
-                <div className='flex items-center space-x-2'>
+                <div className='flex items-center space-x-2 font-sans font-[600]'>
                     <div><RiFileList3Fill size={20}/></div>
-                    <div className='font-semibold cursor-pointer text-sm 2xl:text-base'>Upload</div>
+                    <div className=' cursor-pointer text-sm 2xl:text-base'>Upload</div>
                 </div>
                 <div className='flex items-center space-x-2'>
                     <div><RiShoppingCartFill size={27}/></div>
-                    <div className='font-semibold cursor-pointer text-sm 2xl:text-base'>Cart</div>
+                    <div className=' cursor-pointer text-sm 2xl:text-base font-sans font-[600]'>Cart</div>
                 </div>
                 <div className='flex items-center space-x-2'>
                     <div><RiShieldUserFill size={27}/></div>
-                    <div className='font-semibold cursor-pointer text-sm 2xl:text-base' onClick={()=>router.push('?login=true', undefined,{shallow : true})}>User</div>
+                    <div className=' cursor-pointer text-sm 2xl:text-base font-sans font-[600]' onClick={()=>router.push('?login=true', undefined,{shallow : true})}>User</div>
                 </div>
                 </div>
             </div>
