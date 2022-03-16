@@ -10,7 +10,7 @@ const LoginInput = ({name, type,id,label,onChange, placeholder,value})=>{
       <label htmlFor={id} className={` ${inFocus?'text-primary':'text-gray-700'} transition-all font-semibold`}>{label}</label>
       <div className='flex'>
         {name==='phone'&&
-          <select name="code" className='w-[18%] mr-3 outline-none border-b-2 text-gray-500' id="code">
+          <select name="code" className='w-[18%] bg-white mr-3 outline-none border-b-2 text-gray-500' id="code">
             <option value="-" disabled>Select Code</option>
             <option value="+92" className='group'>+92 (Pakistan)</option>
             <option value="+91">+91 (India)</option>
@@ -91,7 +91,7 @@ const Login = () => {
       <div className='text-2xl font-semibold font-poppins'>
         {isLogin?'LOGIN USER':'REGISTER USER'}
       </div>
-      <div className={`text-sm ${error&&'text-red-600'} text-gray-400 mt-1`}>{!error?"Sign up or Sign in to access your orders, special offers, health tips and more!":`* ${error}`}</div>
+      <div className={`text-sm ${error&&'text-red-600'} text-gray-400 mt-1`}>{!error?`${isLogin}Sign up or Sign in to access your orders, special offers, health tips and more!`:`* ${error}`}</div>
       <div className='mt-8 lg:space-y-7 space-y-7  pr-4'>
       {!isLogin&&<LoginInput onChange={handleChange} value={userForm.fullName} name="fullName" id="fullName"  label="Full Name" placeholder="Enter Full Name" type="text"/>}
         {!isLogin&&<LoginInput type="text" onChange={handleChange} value={userForm.phone} name="phone" id="phone" placeholder="Enter Phone Number" label="Phone Number"/>}
