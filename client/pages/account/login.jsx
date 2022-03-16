@@ -7,7 +7,7 @@ const LoginInput = ({name, type,id,label,onChange, placeholder,value})=>{
   const [inFocus,setInFocus] = useState(false);
   return (
     <div>
-      <label htmlFor={id} className={` ${inFocus?'text-primary':'text-gray-500'} transition-all font-semibold`}>{label}</label>
+      <label htmlFor={id} className={` ${inFocus?'text-primary':'text-gray-700'} transition-all font-semibold`}>{label}</label>
       <div className='flex'>
         {name==='phone'&&
           <select name="code" className='w-[18%] mr-3 outline-none border-b-2 text-gray-500' id="code">
