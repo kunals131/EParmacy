@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { MdAdd, MdMinimize } from "react-icons/md";
+import { MdAdd, MdMinimize, MdHome, MdPhone, MdMail } from "react-icons/md";
 import { FaInstagram, FaFacebook, FaGoogle } from "react-icons/fa";
+
 import Image from "next/image";
 const FooterLink = ({ title, content }) => {
   const [open, setOpen] = useState(false);
@@ -52,27 +53,10 @@ const Footer = () => {
             dispensing quality medicines.
           </div>
         </div>
-        <hr className="my-10" />
+        <hr className="my-10 text-gray-500"/>
         <div className="grid grid-cols-4 justify-between">
           <div>
-            <div className="font-semibold">KNOW US</div>
-            <div className="mt-4 space-y-2 text-sm">
-              <div>About Us</div>
-              <div>Contact Us</div>
-              <div>Location</div>
-              <div>Terms and Conditions</div>
-            </div>
-          </div>
-          <div>
-            <div className="font-semibold">TOP CATEGORIES</div>
-            <div className="mt-4 space-y-2 text-sm">
-              <div>Hepatetis B</div>
-              <div>Hepatetis C</div>
-              <div>Ayurveda</div>
-            </div>
-          </div>
-          <div>
-            <div className="font-semibold">Connect With Us</div>
+            <div className="font-semibold">Connect</div>
             <div className="mt-4 space-x-4 flex text-sm items-center">
               <div>
                 <FaInstagram size={30} className="text-red-500" />
@@ -84,24 +68,49 @@ const Footer = () => {
                 <FaGoogle size={30} className="text-green-600" />
               </div>
             </div>
-          </div>
-          <div>
-            <div className="font-semibold">Download App</div>
-            <div className="mt-4 space-y-2 text-sm">
-              <div>
-                <Image
-                  src="/footerImages/appstore.png"
-                  height="45px"
-                  width="140px"
-                />
-              </div>
-              <div>
+            <div className="font-semibold mt-4">Download App</div>
+            <div className="mt-2">
                 <Image
                   src="/footerImages/playstore.png"
                   height="45px"
                   width="140px"
                 />
               </div>
+          </div>
+          <div>
+            <div className="font-semibold">Quick Links</div>
+            <div className="mt-4 space-y-2 text-gray-600 text-sm">
+              <div>My Account</div>
+              <div>My Orders</div>
+              <div>All Offers</div>
+            </div>
+          </div>
+          <div>
+            <div className="font-semibold">Policies</div>
+            <div className="mt-4 text-gray-600 space-y-2 text-sm">
+              <div>About Us</div>
+              <div>Contact Us</div>
+              <div>Terms and Conditions</div>
+              <div>Privacy Policy</div>
+              <div>FaQs</div>
+            </div>
+          </div>
+          <div>
+            <div className="font-semibold ">Contact Us</div>
+            <div className="mt-4 space-y-2 text-gray-600 text-sm">
+              <div className="flex space-x-2">
+                <div className="mt-1"><MdHome size={18}/></div>
+                <div>Shah Ghazi Muhallah Near Imam Medical Center Jacobabad (Sindh)</div>
+              </div>
+              <div className="flex space-x-2">
+                <div className="mt-1"><MdPhone size={18}/></div>
+                <div>03337389640</div>
+              </div>
+              <div className="flex space-x-2">
+                <div className="mt-1"><MdMail size={18}/></div>
+                <div>ravimedicalstorejcd@gmail.com</div>
+              </div>
+
             </div>
           </div>
         </div>

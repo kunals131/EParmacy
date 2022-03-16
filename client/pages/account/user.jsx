@@ -38,22 +38,22 @@ const User = () => {
       <div className='p-3 font-poppins'>
         <div className='text-2xl font-semibold'>USER DETAILS</div>
         {editMode&&<div className='text-green-600 text-sm mt-1'>You are in Edit Mode, You can change any field and save the changes.</div>}
-        <div className='mt-5 space-y-7'>
-          <div>
+        <div className='mt-5 space-y-7 lg:space-y-0 lg:flex'>
+          <div className='lg:flex-[0.5]'>
           <div className='text-gray-700 font-poppins'>LOGIN DETAILS</div>
           <div className='mt-2 space-y-3'>
             <InputField value={userForm.email} editMode={editMode} onChangeHandler={handleChange} name="email" label="EMAIL" type="email" placeholder="Edit Your Email" />
             <InputField value={userForm.mobile}  editMode={editMode} onChangeHandler={handleChange} name="mobile" label="MOBILE NUMBER" type="text" placeholder="Edit Your Mobile " />
           </div>
           </div>
-          <div>
+          <div className='lg:flex-[0.5]'>
           <div className='text-gray-700 font-poppins'>OTHER INFORMATION</div>
           <div className='mt-2 space-y-3'>
             <InputField value={userForm.fullName}  editMode={editMode} onChangeHandler={handleChange} name="fullName" label="FULL NAME" type="text" placeholder="Edit Your FULL NAME" />
             <InputField value={userForm.primaryAddress}  editMode={editMode} onChangeHandler={handleChange} name="primaryAddress" label="PRIMARY ADDRESS" type="text" placeholder="Edit Your Address " />
           </div>
           </div>
-        </div>
+        </div >
         <div className='flex space-x-3 mt-8'>
           {!editMode&&<div className='p-2 bg-primary text-white w-fit rounded-md ' onClick={()=>setEditMode(true)}>Edit Information</div>}
           {editMode&&<div className='p-2 bg-accent text-white w-fit rounded-md' onClick={handleSubmit}>Save</div>}

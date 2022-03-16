@@ -59,7 +59,7 @@ const Header = ({setShowSidebar}) => {
   return (
       <>
 
-    <div className='lg:bg-background bg-primary lg:shadow-md px-4 py-2 lg:px-3 xl:px-4 3xl:px-5 4xl:px-12 lg:py-6 md:py-5'>
+    <div className='lg:bg-white bg-primary lg:shadow-md px-4 py-2 lg:px-3 xl:px-4 3xl:px-5 4xl:px-12 lg:py-6 md:py-5'>
         <div className='flex justify-between items-center'>
             <div className='text-white flex items-center  space-x-2'>
                 {
