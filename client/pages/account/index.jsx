@@ -7,9 +7,6 @@ const Account = () => {
     const router = useRouter();
     useEffect(()=>{
         setScreenWidth(window.innerWidth);
-        window.addEventListener('resize', ()=>{
-            setScreenWidth(window.innerWidth);
-        })
     }, [])
     useEffect(()=>{
         if (screenWidth>=1024) {

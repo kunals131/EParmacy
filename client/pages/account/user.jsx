@@ -3,7 +3,11 @@ import AccountLayout from '../../components/AccountLayout'
 
 const User = () => {
   return (
-    <AccountLayout>User</AccountLayout>
+    <AccountLayout>
+      <div className=''>
+
+      </div>
+    </AccountLayout>
   )
 }
 
