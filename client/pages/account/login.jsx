@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/dist/client/image'
 
 const Images = ['/login/loginImg1.svg','/login/loginImg2.svg']
 
 const LoginInput = ({name, type,id,label,onChange, placeholder,value})=>{
+  const [inFocus,setInFocus] = useState(false);
   return (
     <div>
-      <label htmlFor={id} className="text-primary font-semibold">{label}</label>
+      <label htmlFor={id} className={` ${inFocus?'text-primary':'text-gray-500'} transition-all font-semibold`}>{label}</label>
       <div className='flex'>
         {name==='phone'&&
           <select name="code" className='w-[18%] mr-3 outline-none border-b-2 text-gray-500' id="code">
@@ -15,7 +16,7 @@ const LoginInput = ({name, type,id,label,onChange, placeholder,value})=>{
             <option value="+91">+91 (India)</option>
           </select>
       }
-      <input type={type} onChange={onChange} value={value} name={name} id={id} placeholder={placeholder} className="py-2 outline-none border-b-2 w-full" />
+      <input  type={type} onFocus={()=>setInFocus(true)} onBlur={()=>setInFocus(false)} onChange={onChange} value={value} name={name} id={id} placeholder={placeholder} className="py-2 outline-none border-b-2 w-full" />
       </div>
     </div>
     
@@ -91,7 +92,7 @@ const Login = () => {
         {isLogin?'LOGIN USER':'REGISTER USER'}
       </div>
       <div className={`text-sm ${error&&'text-red-600'} text-gray-400 mt-1`}>{!error?"Sign up or Sign in to access your orders, special offers, health tips and more!":`* ${error}`}</div>
-      <div className='mt-8 space-y-6 pr-4'>
+      <div className='mt-8 lg:space-y-7 space-y-7  pr-4'>
       {!isLogin&&<LoginInput onChange={handleChange} value={userForm.fullName} name="fullName" id="fullName"  label="Full Name" placeholder="Enter Full Name" type="text"/>}
         {!isLogin&&<LoginInput type="text" onChange={handleChange} value={userForm.phone} name="phone" id="phone" placeholder="Enter Phone Number" label="Phone Number"/>}
         {!isLogin&&<LoginInput onChange={handleChange} value={userForm.email} type="email" name="email" id="email" placeholder="Enter Email Address" label="Email"/>}
