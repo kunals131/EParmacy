@@ -7,7 +7,7 @@ const AccountLayout = ({children}) => {
         <div className='hidden lg:block'>
         <AccountSidebar/>
         </div>
-        <div className='p-2 bg-white'>
+        <div className='p-2 bg-white w-[100%]'>
             {children}
         </div>
 
