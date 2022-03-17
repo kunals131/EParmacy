@@ -1,9 +1,11 @@
 import React from 'react'
-import AccountLayout from '../../components/AccountLayout'
-const MyPres = () => {
+
+const Prescriptions = () => {
   return (
-    <div>MyPres</div>
+    <div>
+      
+    </div>
   )
 }
 
-export default MyPres
+export default Prescriptions

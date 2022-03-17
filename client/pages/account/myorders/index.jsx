@@ -57,7 +57,7 @@ const OrderItem = ()=>{
           <div className='mt-2 text-sm'>5 Items in this Order</div>
         </div>
         <div>
-          <div class='text-xs px-4 py-[2px] border-2 rounded-md shadow-lg xl:text-sm  2xl:px-8 '>View Order</div>
+          <div className='text-xs px-4 py-[2px] border-2 rounded-md shadow-lg xl:text-sm  2xl:px-8 '>View Order</div>
         </div>
       </div>
 
