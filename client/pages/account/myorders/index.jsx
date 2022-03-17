@@ -75,10 +75,10 @@ const Orders = () => {
         <div className='w-[20%] h-[2px] bg-primary'></div>
         <div className='mt-4 flex space-x-3 items-center'>
           <div className='w-[100%]'>
-          <input type="text" className='text-sm border-2 w-[100%] p-[6px] rounded-md' placeholder='Search All Orders' />
+          <input type="text" className='text-sm border-2 outline-none w-[100%] lg:p-2 p-[6px] rounded-md' placeholder='Search All Orders' />
           </div>
           <div>
-            <select name="filterOrders" className='border-2 p-1 rounded-md' id="filterOrder">
+            <select name="filterOrders" className='border-2 lg:p-[7px] p-1 rounded-md' id="filterOrder">
               <option value="AllOrders">All Orders</option>
               <option value="Active Orders">Active Orders</option>
               <option value="Active Orders">Delivered Orders</option>
@@ -86,7 +86,7 @@ const Orders = () => {
             </select>
           </div>
         </div>
-        <hr />
+        <hr className='lg:hidden'/>
         <div className='mt-6 space-y-3 lg:space-y-6'>
           <OrderItem/>
           <OrderItem/>
