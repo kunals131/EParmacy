@@ -35,7 +35,7 @@ const User = () => {
   }
   return (
     <AccountLayout>
-      <div className='p-3 font-poppins'>
+      <div className='p-3 font-poppins lg:p-4'>
         <div className='text-2xl font-semibold'>USER DETAILS</div>
         {editMode&&<div className='text-green-600 text-sm mt-1'>You are in Edit Mode, You can change any field and save the changes.</div>}
         <div className='mt-5 space-y-7 lg:space-y-0 lg:flex'>

@@ -9,13 +9,13 @@ import {RiLogoutCircleLine, RiLockPasswordLine} from 'react-icons/ri';
 
 const MenuItem = ({title,link,icon})=>{
     return (
-        <div className='flex  justify-between items-center'>
-        <div className='flex p-2 items-center space-x-4'>
+        <div className='flex  justify-between 2xl:px-2 items-center'>
+        <div className='flex p-2 items-center space-x-4 lg:px-3'>
             <div className='p-3 border-2 rounded-full flex items-center justify-center bg-gray-100'>{icon}</div>
-            <div className=' text-lg'>{title}</div>
+            <div className=' text-lg 2xl:text-base'>{title}</div>
         </div>
         <div>
-        <MdArrowForwardIos className='text-gray-500' size={20}/>
+        <MdArrowForwardIos className='text-gray-500' size={18}/>
         </div>
         
     </div>
@@ -24,18 +24,18 @@ const MenuItem = ({title,link,icon})=>{
 
 const AccountSidebar = () => {
   return (
-    <div className='p-2'>
+    <div className='bg-white rounded-md lg:w-[110%] xl:w-[112%]'>
         <div className='bg-white flex space-x-5 font-poppins py-7 px-4 rounded-md'>
             <div className='h-[60px] flex items-center bg-primary bg-opacity-20 justify-center w-[60px]  rounded-full'>
                 <TiUser size={40} className='text-primary'/>
             </div>
             <div>
-                <div className='font-semibold font-poppins text-2xl'>Kunal Sangtiani</div>
-                <div className='text-sm text-gray-400 mt-[2px]'>ksangtiani13@gmail.com</div>
+                <div className='font-semibold font-poppins text-2xl lg:text-xl'>Kunal Sangtiani</div>
+                <div className='text-sm text-gray-400 mt-[2px] lg:mt-1'>ksangtiani13@gmail.com</div>
                 <div className='text-sm mt-[1px] text-gray-400'>+91 7049930190</div>
             </div>
         </div>
-        <div className='mt-2 p-3 bg-white space-y-4'>
+        <div className='mt-2 p-3 lg:p-2 bg-white space-y-4'>
               <MenuItem title={'Account Information'} icon={<TiUser size={24} className='text-gray-500'/>}/>
               <hr />
               <MenuItem title={'My Orders'} icon={<GoPackage className='text-gray-600' size={22}/>}/>
