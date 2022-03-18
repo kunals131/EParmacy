@@ -54,7 +54,7 @@ const Checkout = ({ prescription }) => {
   const [selected, setSelected] = useState(null);
 
   return (
-    <div className="px-3">
+    <div className="px-3 lg:max-w-[750px] lg:m-auto">
       <div className="flex justify-between items-center px-3 py-3 mt-2 bg-white shadow-sm rounded-sm font-poppins">
         <div className="flex space-x-1 items-center">
           <div className="flex">

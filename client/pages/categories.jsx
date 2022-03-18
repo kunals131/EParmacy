@@ -17,7 +17,7 @@ const CategoryItem = ({img,title,offer})=>{
 const Categories = () => {
   return (<div>
     <HeroImage/>
-    <div className="mt-5 space-y-4">
+    <div className="mt-5 space-y-4 lg:max-w-[750px] m-auto">
       <CategoryItem title="Covid HealthCare Products" img="/categoryImage/pic1.png" offer={55}/>
       <CategoryItem title="Hepatetis B" img="/categoryImage/pic2.png" offer="20" />
       <CategoryItem title="Lifestyle Products" img="/categoryImage/pic3.png" />
