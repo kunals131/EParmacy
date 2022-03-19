@@ -7,21 +7,17 @@ import cookie from 'cookie';
 const loginController = async(req,res)=>{
     if (req.method==='POST') {
         await dbConnect();
-        const {username,password,isEmail} = req.body;
+        const {username,password} = req.body;
         if (!username || !password) return res.status(406).json({message : 'Invalid Username or Password!'});
         try {
-            let foundUser = null;
-            if (isEmail) {
-                foundUser = await User.findOne({email : username}).exec();
-            }
-            else {
-                foundUser = await User.findOne({phoneNumber : username}).exec();
-            }
+
+            const foundUser = await User.findOne({email : username}).exec();
+           
             if (!foundUser) return res.status(401).json({
                 message : 'Username not found.'
             });
             const match = await bcrypt.compare(password,foundUser.password);
-            if (!match) res.send(406).json({message : "Invalid Username or Password"});
+            if (!match) res.status(406).json({message : "Invalid Username or Password"});
             const accessToken = createAccessToken({
                 email : foundUser.email,
                 phoneNumber : foundUser.phoneNumber,

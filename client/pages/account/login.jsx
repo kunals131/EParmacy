@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/dist/client/image'
-
+import { useDispatch } from 'react-redux'
+import { loginUser } from '../../redux/actions/user'
 const Images = ['/login/loginImg1.svg','/login/loginImg2.svg']
 
 const LoginInput = ({name, type,id,label,onChange, placeholder,value})=>{
@@ -37,6 +38,8 @@ const Login = () => {
   const [userForm, setUserForm] = useState(initialState);
   const [error,setError] = useState("");
   const [showcase,setShowcase] = useState(Images[0]);
+  const dispatch = useDispatch();
+  
   const handleChange =(e)=> {
     setUserForm((prev)=>{
       return {...prev,[e.target.name] : e.target.value}
@@ -48,8 +51,7 @@ const Login = () => {
   const handleSubmit = ()=>{
     if (isLogin) {
       const {username,password} = userForm;
-      const formData = {username,password};
-      console.log(formData);
+      dispatch(loginUser(username,password));
     }
     else {
       const {fullName,password,confirmPassword,phone,email} = userForm;

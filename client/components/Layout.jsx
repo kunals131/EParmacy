@@ -4,14 +4,12 @@ import Footer from './Footer'
 import Head from 'next/head'
 import UnderConstruction from './UnderConstruction';
 import Sidebar from './Sidebar';
-import { useSelector } from 'react-redux';
 
 
 
 const Layout = ({children}) => {
 
     const [showSidebar, setShowSidebar] = useState(false);
-    const user = useSelector(state=>state.user);
    
   return (
     <>

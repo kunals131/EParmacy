@@ -13,7 +13,7 @@ const handleRefreshToken = async(req,res)=>{
     if (!foundUser) return res.status(403).json({message : 'Not Authenticated!'});
 
     jwt.verify(refreshToken,process.env.REFRESH_TOKEN_SECRET,(err,decoded)=>{
-        if (err || foundUser.email !==decoded.email || foundUser.phoneNumber !==decoded.phoneNumber) return res.send(403).json({message : 'Not Authenticated!'});
+        if (err || foundUser.email !==decoded.email || foundUser.phoneNumber !==decoded.phoneNumber) return res.status(403).json({message : 'Not Authenticated!'});
         const accessToken = createAccessToken(decoded);
         res.json({accessToken});
     })
