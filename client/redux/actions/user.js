@@ -1,4 +1,4 @@
-import { loginUserAPI } from "../../api/auth"
+import { loginUserAPI, refreshAuth } from "../../api/auth"
 import jwt_decode from 'jwt-decode';
 import { USER_ACTIONS } from "../actionTypes";
 export const loginUser = (username,password)=>async (dispatch)=>{
@@ -20,15 +20,19 @@ export const loginUser = (username,password)=>async (dispatch)=>{
     }
 }
 
-export const updateUser = (token)=>{
+export const updateUser = ()=>async(dispatch)=>{
     try {
-        const decode = jwt_decode(token);
-        console.log(decode);
-        return {
-            type : USER_ACTIONS.UPDATE_USER,
-            payload : {...decode}
-        }
+    const res = await refreshAuth();
+    const token = res.data.accessToken;
+    console.log(res);
+    const data = jwt_decode(token);
+    console.log(data);
+    dispatch({
+        type : USER_ACTIONS.UPDATE_USER,
+        payload : {...data}
+    });
     }catch(err) {
-        console.log(err);
-    }
+    console.log(err.message)
+}
+
 }

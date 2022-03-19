@@ -4,12 +4,18 @@ import Footer from './Footer'
 import Head from 'next/head'
 import UnderConstruction from './UnderConstruction';
 import Sidebar from './Sidebar';
+import { useDispatch } from 'react-redux';
+import { updateUser } from '../redux/actions/user';
 
 
 
 const Layout = ({children}) => {
 
     const [showSidebar, setShowSidebar] = useState(false);
+    const dispatch = useDispatch();
+    useEffect(()=>{
+      dispatch(updateUser());
+    }, [])
    
   return (
     <>
