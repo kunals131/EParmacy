@@ -18,3 +18,8 @@ export const registerUserAPI = async(data)=>{
     const res = axios.post('/register', data);
     return res;
 }
+
+export const refreshAuth = async(data)=>{
+    const res = axios.get('/refreshtoken');
+    return res;
+}
