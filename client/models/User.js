@@ -37,7 +37,10 @@ const userSchema = new Schema({
       },
     },
   ],
-  savedItems: [Schema.Types.ObjectId],
+  savedItems: [{
+    type : Schema.Types.ObjectId,
+    ref : 'Product'
+  }],
   addresses: [
     {
       fullName: String,
@@ -47,7 +50,7 @@ const userSchema = new Schema({
       landmark: String,
       town: String,
       state: String,
-      default: {
+      isDefault: {
         Boolean,
         default: false,
       },
