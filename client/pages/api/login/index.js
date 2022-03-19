@@ -27,6 +27,8 @@ const loginController = async(req,res)=>{
             const refreshToken =  createRefreshToken({
                 email : foundUser.email,
                 phoneNumber : foundUser.phoneNumber,
+                cart : foundUser.cart,
+                fullName : foundUser.fullName
             });
             foundUser.refreshToken =refreshToken;
             let result = foundUser.save();
