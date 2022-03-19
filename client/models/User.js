@@ -14,10 +14,12 @@ const userSchema = new Schema({
   email: {
     type: String,
     required: true,
+    unique : true
   },
   phoneNumber: {
     type: String,
     required: true,
+    unique : true
   },
   orders: [
     {
@@ -56,6 +58,7 @@ const userSchema = new Schema({
       },
     },
   ],
+  refreshToken : String
 });
 
 export default mongoose.models.USER || mongoose.model("USER", userSchema);

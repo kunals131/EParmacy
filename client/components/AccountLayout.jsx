@@ -10,7 +10,6 @@ const AccountLayout = ({children}) => {
         <div className='p-2 bg-white w-[100%] xl:w-[80%] rounded-md'>
             {children}
         </div>
-
     </div>
   )
 }
