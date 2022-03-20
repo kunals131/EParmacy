@@ -1,6 +1,6 @@
 import Axios from "axios"
 
-const axios = Axios.create({
+export const axios = Axios.create({
     baseURL : 'http://localhost:3000/api',
     timeout : 1000,
     headers : {
@@ -21,5 +21,10 @@ export const registerUserAPI = async(data)=>{
 
 export const refreshAuth = async(data)=>{
     const res = axios.get('/refreshtoken');
+    return res;
+}
+
+export const logoutUserAPI = async()=>{
+    const res = axios.post('/logout');
     return res;
 }

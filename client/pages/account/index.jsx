@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router';
 import AccountSidebar from '../../components/AccountSidebar';
-
+import { axios } from '../../api/auth';
 const Account = () => {
     const [screenWidth,setScreenWidth] = useState(100);
     const router = useRouter();
@@ -17,5 +17,6 @@ const Account = () => {
 
     return <AccountSidebar/>
 }
+
 
 export default Account

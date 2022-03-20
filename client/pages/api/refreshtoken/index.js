@@ -6,7 +6,7 @@ import dbConnect from "../../../config/dbConfig";
 const handleRefreshToken = async (req, res) => {
   try {
     const cookies = req.cookies;
-    console.log(cookies);
+    // console.log(cookies);
     await dbConnect();
     if (!cookies?.refreshToken)
       return res.status(401).json({ message: "Not Authenticated!" });

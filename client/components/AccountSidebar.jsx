@@ -6,10 +6,13 @@ import {GoPackage} from 'react-icons/go'
 import {AiOutlineHome, AiOutlineFileDone} from 'react-icons/ai'
 import {BsBag} from 'react-icons/bs';
 import {RiLogoutCircleLine, RiLockPasswordLine} from 'react-icons/ri';
+import { useDispatch } from 'react-redux';
+import { loginUser, logoutUser } from '../redux/actions/user';
+import {useRouter} from 'next/router';
 
-const MenuItem = ({title,link,icon})=>{
+const MenuItem = ({title,link,icon, onClick})=>{
     return (
-        <div className='flex  justify-between 2xl:px-2 items-center'>
+        <div onClick={onClick} className='flex cursor-pointer  justify-between 2xl:px-2 items-center'>
         <div className='flex p-2 items-center space-x-4 lg:px-3'>
             <div className='p-3 border-2 rounded-full flex items-center justify-center bg-gray-100'>{icon}</div>
             <div className=' text-lg 2xl:text-base'>{title}</div>
@@ -23,6 +26,8 @@ const MenuItem = ({title,link,icon})=>{
 }
 
 const AccountSidebar = () => {
+    const dispatch = useDispatch();
+    const router = useRouter();
   return (
     <div className='bg-white rounded-md lg:w-[110%] xl:w-[112%]'>
         <div className='bg-white flex space-x-5 font-poppins py-7 px-4 rounded-md'>
@@ -48,7 +53,7 @@ const AccountSidebar = () => {
               <hr />
               <MenuItem title={'Security'} icon={<RiLockPasswordLine className='text-gray-600' size={22}/>}/>
               <hr />
-              <MenuItem title={'Logout'} icon={<RiLogoutCircleLine className='text-gray-600' size={22}/>}/>
+              <MenuItem onClick={()=>{dispatch(logoutUser(router))}} title={'Logout'} icon={<RiLogoutCircleLine className='text-gray-600' size={22}/>}/>
               
             </div>
 

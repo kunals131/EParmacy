@@ -4,7 +4,8 @@ import {RiFileList3Fill, RiShoppingCartFill, RiShieldUserFill} from 'react-icons
 import Image from 'next/image';
 import SearchBar from './Searchbar';
 import { useRouter } from 'next/router';
-import Link from 'next/link'
+import Link from 'next/link';
+import { useSelector } from 'react-redux';
 
 const DekstopHeader = ({className})=>{
     <div className={`${className}`}>
@@ -29,6 +30,8 @@ const HeaderItem = ({title,link, className})=>{
 }
 
 const Header = ({setShowSidebar}) => {
+    const user = useSelector(state=>state.user);
+    console.log(user);
     const [searchType, setSearchType] =  useState('button')
     const [path,setPath] = useState('/');
     const router = useRouter();
@@ -55,6 +58,15 @@ const Header = ({setShowSidebar}) => {
         }
         return <Image src="/mainx.png"height="30px" width="100px"/>
     }
+    const handleProfileOnClick = ()=>{
+        if (user?.token) {
+            router.push('/account');
+        }
+        else {
+            router.push('/account/login')
+        }
+    }
+
 
   return (
       <>
@@ -113,7 +125,7 @@ const Header = ({setShowSidebar}) => {
                 </div>
                 <div className='flex items-center space-x-2'>
                     <div><RiShieldUserFill size={27}/></div>
-                    <div className=' cursor-pointer text-sm 2xl:text-base font-sans font-[600]' onClick={()=>router.push('?login=true', undefined,{shallow : true})}>User</div>
+                    <div className=' cursor-pointer text-sm 2xl:text-base font-sans font-[600]' onClick={handleProfileOnClick}>{user?.token?user.fullName.slice(' ')[0]:'Login'}</div>
                 </div>
                 </div>
             </div>

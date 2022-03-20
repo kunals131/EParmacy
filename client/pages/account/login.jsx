@@ -2,6 +2,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/dist/client/image'
 import { useDispatch } from 'react-redux'
 import { loginUser } from '../../redux/actions/user'
+import { useRouter } from 'next/router';
+
+
 const Images = ['/login/loginImg1.svg','/login/loginImg2.svg']
 
 const LoginInput = ({name, type,id,label,onChange, placeholder,value})=>{
@@ -39,7 +42,8 @@ const Login = () => {
   const [error,setError] = useState("");
   const [showcase,setShowcase] = useState(Images[0]);
   const dispatch = useDispatch();
-  
+  const router = useRouter();
+
   const handleChange =(e)=> {
     setUserForm((prev)=>{
       return {...prev,[e.target.name] : e.target.value}
@@ -51,7 +55,7 @@ const Login = () => {
   const handleSubmit = ()=>{
     if (isLogin) {
       const {username,password} = userForm;
-      dispatch(loginUser(username,password));
+      dispatch(loginUser(username,password, router));
     }
     else {
       const {fullName,password,confirmPassword,phone,email} = userForm;
