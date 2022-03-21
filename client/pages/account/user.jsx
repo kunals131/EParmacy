@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import AccountLayout from '../../components/AccountLayout'
 
 
+
 const InputField = ({id,name,placeholder,type,value,label,onChangeHandler,editMode})=>{
 
   return (

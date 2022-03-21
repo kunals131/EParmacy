@@ -2,8 +2,9 @@ import {USER_ACTIONS} from '../actionTypes';
 
 const INITAL_STATE = {
     email : '',
-    token : '',
+    state :false,
     phoneNumber : '',
+    fullName : '',
     cart : []
 }
 

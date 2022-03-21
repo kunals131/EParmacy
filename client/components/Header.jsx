@@ -59,12 +59,9 @@ const Header = ({setShowSidebar}) => {
         return <Image src="/mainx.png"height="30px" width="100px"/>
     }
     const handleProfileOnClick = ()=>{
-        if (user?.token) {
+
             router.push('/account');
-        }
-        else {
-            router.push('/account/login')
-        }
+       
     }
 
 

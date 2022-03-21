@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/dist/client/image'
 import { useDispatch } from 'react-redux'
-import { loginUser } from '../../redux/actions/user'
+import { loginUser } from '../redux/actions/user';
 import { useRouter } from 'next/router';
 
 

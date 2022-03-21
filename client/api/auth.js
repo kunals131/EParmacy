@@ -19,8 +19,8 @@ export const registerUserAPI = async(data)=>{
     return res;
 }
 
-export const refreshAuth = async(data)=>{
-    const res = axios.get('/refreshtoken');
+export const refreshAuth = async()=>{
+    const res = axios.get('/verifyauth');
     return res;
 }
 
