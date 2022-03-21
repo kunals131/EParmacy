@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/dist/client/image'
 import { useDispatch } from 'react-redux'
-import { loginUser } from '../redux/actions/user';
+import { loginUser, registerUser, updateAuth } from '../redux/actions/user';
 import { useRouter } from 'next/router';
 import { userAuthVerification } from '../utils/authverification';
+import axios from 'axios';
 
 export const getServerSideProps = (ctx)=>{
   const isAuth = userAuthVerification(ctx.req);
@@ -27,13 +28,6 @@ const LoginInput = ({name, type,id,label,onChange, placeholder,value})=>{
     <div>
       <label htmlFor={id} className={` ${inFocus?'text-primary':'text-gray-700'} transition-all font-semibold`}>{label}</label>
       <div className='flex'>
-        {name==='phone'&&
-          <select name="code" className='w-[18%] bg-white mr-3 outline-none border-b-2 text-gray-500' id="code">
-            <option value="-" disabled>Select Code</option>
-            <option value="+92" className='group'>+92 (Pakistan)</option>
-            <option value="+91">+91 (India)</option>
-          </select>
-      }
       <input  type={type} onFocus={()=>setInFocus(true)} onBlur={()=>setInFocus(false)} onChange={onChange} value={value} name={name} id={id} placeholder={placeholder} className="py-2 outline-none border-b-2 w-full" />
       </div>
     </div>
@@ -46,7 +40,7 @@ const initialState = {
   password : "",
   confirmPassword : "",
   email : "",
-  phone : "",
+  phoneNumber : "",
   username : "",
 }
 
@@ -66,15 +60,23 @@ const Login = () => {
   };
 
 
-  const handleSubmit = ()=>{
+  const handleSubmit = async()=>{
     if (isLogin) {
       const {username,password} = userForm;
       dispatch(loginUser(username,password, router));
     }
     else {
-      const {fullName,password,confirmPassword,phone,email} = userForm;
-      const formData = {fullName,password,phone,email,confirmPassword};
-      console.log(formData);
+      const {fullName,password,confirmPassword,phoneNumber,email} = userForm;
+      if (confirmPassword!==password ) {
+        return setError('Password dont match');
+      }
+      try {
+      const res = await axios.post('http://localhost:3000/api/register', {fullName,password,confirmPassword,phoneNumber
+    ,email}, {withCredentials : true});
+    dispatch(loginUser(email,password, router));
+      }catch(err) {
+        console.log(err); 
+      }
     }
   }
 
@@ -114,7 +116,7 @@ const Login = () => {
       <div className={`text-sm ${error&&'text-red-600'} text-gray-400 mt-1`}>{!error?`${isLogin}Sign up or Sign in to access your orders, special offers, health tips and more!`:`* ${error}`}</div>
       <div className='mt-8 lg:space-y-7 space-y-7  pr-4'>
       {!isLogin&&<LoginInput onChange={handleChange} value={userForm.fullName} name="fullName" id="fullName"  label="Full Name" placeholder="Enter Full Name" type="text"/>}
-        {!isLogin&&<LoginInput type="text" onChange={handleChange} value={userForm.phone} name="phone" id="phone" placeholder="Enter Phone Number" label="Phone Number"/>}
+        {!isLogin&&<LoginInput type="text" onChange={handleChange} value={userForm.phoneNumber} name="phoneNumber" id="phoneNumber" placeholder="Enter Phone Number" label="Phone Number"/>}
         {!isLogin&&<LoginInput onChange={handleChange} value={userForm.email} type="email" name="email" id="email" placeholder="Enter Email Address" label="Email"/>}
         {isLogin&&<LoginInput onChange={handleChange} value={userForm.username} name="username" id="username"  label="Email / Phone" placeholder="Enter your Email or Phone Number" type="email"/>}
         <LoginInput name="password" id="password" onChange={handleChange} value={userForm.password}  label="Password" placeholder="Enter Password" type="password"/>

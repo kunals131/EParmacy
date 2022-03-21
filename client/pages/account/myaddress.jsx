@@ -6,13 +6,12 @@ import Modal from '../../components/Modal';
 import InputField from '../../components/InputField';
 import AddressModal from '../../components/AddressModal';
 
-
 export const getServerSideProps = (ctx)=>{
   const isAuth = userAuthVerification(ctx.req);
   if (!isAuth) {
       return {
           redirect : {
-              permanent : 'false',
+              permanent : false,
               destination : '/login'
           }
       }

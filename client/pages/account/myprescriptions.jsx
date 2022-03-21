@@ -3,6 +3,19 @@ import AccountLayout from '../../components/AccountLayout';
 import {RiFileList3Line} from 'react-icons/ri';
 import {BsPlusLg} from 'react-icons/bs';
 
+export const getServerSideProps = (ctx)=>{
+  const isAuth = userAuthVerification(ctx.req);
+  if (!isAuth) {
+      return {
+          redirect : {
+              permanent : false,
+              destination : '/login'
+          }
+      }
+  }
+  return {props : {}}
+}
+
 const PrescriptionItem = ()=>{
   return (
     <div className='p-3 border-2 rounded-md flex items-center space-x-5 3xl:p-10 3xl:py-16'>

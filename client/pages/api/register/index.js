@@ -2,11 +2,13 @@ import User from "../../../models/User";
 import bcrypt from 'bcrypt';
 import dbConnect from '../../../config/dbConfig';
 const registerController = async(req,res)=>{
+    console.log(req.body);
+    console.log('REACHED')
     if (req.method==='POST') {
         await dbConnect();
     const {email,phoneNumber,password,confirmPassword, fullName} = req.body;
     if (!email || !phoneNumber || !password || !confirmPassword || !fullName) {
-        res.status(406).json({
+        return res.status(406).json({
             message : "Some Fields are missing"
         })
     }
@@ -52,9 +54,7 @@ const registerController = async(req,res)=>{
     }
 }
 else {
-    let users = await User.find({});
-    await User.deleteMany({});
-    res.json(JSON.stringify(users));
+    return res.status(404).json({message : 'Invalid Request Method'})
 }
 
 }

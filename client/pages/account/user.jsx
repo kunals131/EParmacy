@@ -8,7 +8,7 @@ export const getServerSideProps = (ctx)=>{
   if (!isAuth) {
       return {
           redirect : {
-              permanent : 'false',
+              permanent : false,
               destination : '/login'
           }
       }

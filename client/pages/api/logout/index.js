@@ -3,42 +3,24 @@ import cookie from "cookie";
 
 const logoutController = async (req, res) => {
   const cookies = req.cookies;
-  if (!cookies?.refreshToken)
-    return res.status(204).json({ message: "Already Logged Out" });
-  const refreshToken = cookies.refreshToken;
-
-  try {
-    const foundUser = await User.findOne({ refreshToken }).exec();
-    if (!foundUser) {
+  if (cookies) {
+    const {token} =cookies;
+    if (token) {
       res.setHeader(
         "Set-Cookie",
-        cookie.serialize("refreshToken", "", {
+        cookie.serialize("token", "", {
           httpOnly: true,
-          sameSite: "None",
-          secure: "true",
+          secure: process.env.NODE_ENV !== "development",
           maxAge: -1,
+          sameSite: "strict",
+          path: "/",
         })
       );
-      return res.status(204).json({ message: "Logged Out" });
+      return res.json({message : 'Logged Out'});
     }
-
-    foundUser.refreshToken = "";
-    const result = await foundUser.save();
-    console.log(result);
-
-    res.setHeader(
-      "Set-Cookie",
-      cookie.serialize("refreshToken", "", {
-        httpOnly: true,
-        sameSite: "None",
-        secure: "true",
-        maxAge: -1,
-      })
-    );
-    return res.status(204).json({ message: "Logged Out" });
-  } catch (err) {
-    console.log(err);
   }
+  return res.json({message : 'Logged Out'});
+
 };
 
 export default logoutController;

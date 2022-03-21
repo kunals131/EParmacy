@@ -122,7 +122,7 @@ const Header = ({setShowSidebar}) => {
                 </div>
                 <div className='flex items-center space-x-2'>
                     <div><RiShieldUserFill size={27}/></div>
-                    <div className=' cursor-pointer text-sm 2xl:text-base font-sans font-[600]' onClick={handleProfileOnClick}>{user?.token?user.fullName.slice(' ')[0]:'Login'}</div>
+                    <div className=' cursor-pointer text-sm 2xl:text-base font-sans font-[600]' onClick={handleProfileOnClick}>{user?.state?user.fullName.split(' ')[0]:'Login'}</div>
                 </div>
                 </div>
             </div>

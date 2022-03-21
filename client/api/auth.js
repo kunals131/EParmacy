@@ -15,12 +15,12 @@ export const loginUserAPI = async(username,password,isEmail)=>{
 }
 
 export const registerUserAPI = async(data)=>{
-    const res = axios.post('/register', data);
+    const res = await axios.post('/register', {...data});
     return res;
 }
 
 export const refreshAuth = async()=>{
-    const res = axios.get('/verifyauth');
+    const res = axios.post('/verifytoken', {status : true});
     return res;
 }
 
