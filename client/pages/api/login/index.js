@@ -19,7 +19,7 @@ export default async function loginHandler(req, res) {
         return res.status(406).json({ message: "Invalid Email or Password" });
       const token = sign({
         id: foundUser._id
-      },process.env.ACCESS_TOKEN_SECRET);
+      },process.env.ACCESS_TOKEN_SECRET, {expiresIn : '10m'});
       res.setHeader(
         "Set-Cookie",
         cookie.serialize("token", token, {

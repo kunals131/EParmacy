@@ -1,7 +1,20 @@
 import React, { useState } from 'react'
 import AccountLayout from '../../components/AccountLayout'
+import { userAuthVerification } from '../../utils/AuthVerification';
 
 
+export const getServerSideProps = (ctx)=>{
+  const isAuth = userAuthVerification(ctx.req);
+  if (!isAuth) {
+      return {
+          redirect : {
+              permanent : 'false',
+              destination : '/login'
+          }
+      }
+  }
+  return {props : {}}
+}
 
 const InputField = ({id,name,placeholder,type,value,label,onChangeHandler,editMode})=>{
 
