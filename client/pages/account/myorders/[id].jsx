@@ -3,6 +3,20 @@ import AccountLayout from "../../../components/AccountLayout";
 import { BsCheck2 } from "react-icons/bs";
 import Image from "next/image";
 
+
+export const getServerSideProps = (ctx)=>{
+  const isAuth = userAuthVerification(ctx.req);
+  if (!isAuth) {
+      return {
+          redirect : {
+              permanent : 'false',
+              destination : '/login'
+          }
+      }
+  }
+  return {props : {}}
+}
+
 const OrderItem = () => {
   return (
     <div className="flex items-center space-x-5 p-1 border-[1px] rounded-md">

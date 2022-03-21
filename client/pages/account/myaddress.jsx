@@ -7,6 +7,20 @@ import InputField from '../../components/InputField';
 import AddressModal from '../../components/AddressModal';
 
 
+export const getServerSideProps = (ctx)=>{
+  const isAuth = userAuthVerification(ctx.req);
+  if (!isAuth) {
+      return {
+          redirect : {
+              permanent : 'false',
+              destination : '/login'
+          }
+      }
+  }
+  return {props : {}}
+}
+
+
 const AddressComponent = ({isDefault, setOpen, setIsEdit})=>{
   const [showModal,setShowModal] = useState(true);
   return (

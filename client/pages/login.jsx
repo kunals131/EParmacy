@@ -3,6 +3,20 @@ import Image from 'next/dist/client/image'
 import { useDispatch } from 'react-redux'
 import { loginUser } from '../redux/actions/user';
 import { useRouter } from 'next/router';
+import { userAuthVerification } from '../utils/authverification';
+
+export const getServerSideProps = (ctx)=>{
+  const isAuth = userAuthVerification(ctx.req);
+  if (isAuth) {
+      return {
+          redirect : {
+              permanent : false,
+              destination : '/'
+          }
+      }
+  }
+  return {props : {}}
+}
 
 
 const Images = ['/login/loginImg1.svg','/login/loginImg2.svg']
