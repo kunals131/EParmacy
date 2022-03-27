@@ -3,6 +3,7 @@ import ProductListCard from "../../components/ProductCard/ProductListCard";
 import BreadCrumb from "../../components/BreadCrumb";
 import FilterOptions from "../../components/FilterOptions";
 import { MdClear } from "react-icons/md";
+import Pagenation from "../../components/Pagenation";
 const Products = () => {
   const listInnerRef = useRef();
   const [showOptions, setShowOptions] = useState(true);
@@ -203,6 +204,7 @@ const Products = () => {
               <ProductListCard />
               <ProductListCard />
             </div>
+            <div className="flex items-center justify-center mt-4"><Pagenation/></div>
           </div>
           {showOptions && (
             <div className="flex xl:hidden fixed z-[100] bottom-5 left-[calc(50vw-90px)] justify-center">

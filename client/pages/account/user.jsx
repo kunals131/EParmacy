@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux';
 import AccountLayout from '../../components/AccountLayout'
 import { userAuthVerification } from '../../utils/AuthVerification';
 
@@ -17,7 +18,7 @@ export const getServerSideProps = (ctx)=>{
 }
 
 const InputField = ({id,name,placeholder,type,value,label,onChangeHandler,editMode})=>{
-
+const user = useSelector(state=>state.user);
   return (
     <div className='font-poppins'>
       <label htmlFor={id} className='text-primary text-sm font-semibold'>{label}</label>
@@ -29,6 +30,7 @@ const InputField = ({id,name,placeholder,type,value,label,onChangeHandler,editMo
 }
 
 const User = () => {
+  const user = useSelector(state=>state.user);
   const [userForm,setUserForm] = useState({
     fullName : 'Kunal Sangtiani',
     email : 'ksangtinai13@gmail.com',

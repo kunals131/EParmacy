@@ -9,6 +9,8 @@ const categorySchema = new Schema({
     },
     products :[Schema.Types.ObjectId],
     description : String,
+    image : String
+
 });
 
 

@@ -15,18 +15,18 @@ const productSchema = new Schema({
     },
     quantity : {
         type : Number,
-        required : true,
         min : 0
     },
     category : {
         type : Schema.Types.ObjectId,
         ref : 'Category'
     },
+    brand :String,  
     options : [{
         text : String,
         price : Number
     }],
-    discount : {
+    discountedPrice : {
         type :Number,
         min : 0
     },
@@ -36,7 +36,6 @@ const productSchema = new Schema({
     },
     conditions : {
         type : String,
-        required : true
     },
     images : {
         type : [String],

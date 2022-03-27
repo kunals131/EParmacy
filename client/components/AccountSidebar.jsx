@@ -9,6 +9,7 @@ import {RiLogoutCircleLine, RiLockPasswordLine} from 'react-icons/ri';
 import { useDispatch } from 'react-redux';
 import { loginUser, logoutUser } from '../redux/actions/user';
 import {useRouter} from 'next/router';
+import { useSelector } from 'react-redux';
 
 const MenuItem = ({title,link,icon, onClick})=>{
     return (
@@ -26,6 +27,7 @@ const MenuItem = ({title,link,icon, onClick})=>{
 }
 
 const AccountSidebar = () => {
+    const user = useSelector(state=>state.user);
     const dispatch = useDispatch();
     const router = useRouter();
   return (
@@ -35,9 +37,9 @@ const AccountSidebar = () => {
                 <TiUser size={40} className='text-primary'/>
             </div>
             <div>
-                <div className='font-semibold font-poppins text-2xl lg:text-xl'>Kunal Sangtiani</div>
-                <div className='text-sm text-gray-400 mt-[2px] lg:mt-1'>ksangtiani13@gmail.com</div>
-                <div className='text-sm mt-[1px] text-gray-400'>+91 7049930190</div>
+                <div className='font-semibold font-poppins text-2xl lg:text-xl'>{user.fullName}</div>
+                <div className='text-sm text-gray-400 mt-[2px] lg:mt-1'>{user.email}</div>
+                <div className='text-sm mt-[1px] text-gray-400'>{user.phoneNumber}</div>
             </div>
         </div>
         <div className='mt-2 p-3 lg:p-2 bg-white space-y-4'>
