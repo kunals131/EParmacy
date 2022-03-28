@@ -7,6 +7,7 @@ const productHandler = async(req,res)=>{
   if (req.method==='GET') {
     await dbConnect();
     const {page,category,brand} = req.query;
+    console.log(page);
     let currentPage = page || 1;
     let filters = {};
     if (category) filters = {...filters,category}

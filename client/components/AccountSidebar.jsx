@@ -43,17 +43,17 @@ const AccountSidebar = () => {
             </div>
         </div>
         <div className='mt-2 p-3 lg:p-2 bg-white space-y-4'>
-              <MenuItem title={'Account Information'} icon={<TiUser size={24} className='text-gray-500'/>}/>
+              <MenuItem onClick={()=>router.push('/account/user')} title={'Account Information'} icon={<TiUser size={24} className='text-gray-500'/>}/>
               <hr />
-              <MenuItem title={'My Orders'} icon={<GoPackage className='text-gray-600' size={22}/>}/>
+              <MenuItem onClick={()=>router.push('/account/myorders')} title={'My Orders'} icon={<GoPackage className='text-gray-600' size={22}/>}/>
               <hr />
-              <MenuItem title={'My Prescriptions'} icon={<AiOutlineFileDone className='text-gray-600' size={22}/>}/>
+              <MenuItem onClick={()=>router.push('/account/myprescriptions')} title={'My Prescriptions'} icon={<AiOutlineFileDone className='text-gray-600' size={22}/>}/>
               <hr />
-              <MenuItem title={'My Address'} icon={<AiOutlineHome className='text-gray-600' size={22}/>}/>
+              <MenuItem onClick={()=>router.push('/account/myaddress')} title={'My Address'} icon={<AiOutlineHome className='text-gray-600' size={22}/>}/>
               <hr />
-              <MenuItem title={'Saved Items'} icon={<BsBag className='text-gray-600' size={22}/>}/>
+              <MenuItem onClick={()=>router.push('/account/saveditems')} title={'Saved Items'} icon={<BsBag className='text-gray-600' size={22}/>}/>
               <hr />
-              <MenuItem title={'Security'} icon={<RiLockPasswordLine className='text-gray-600' size={22}/>}/>
+              <MenuItem onClick={()=>router.push('/account/security')} title={'Security'} icon={<RiLockPasswordLine className='text-gray-600' size={22}/>}/>
               <hr />
               <MenuItem onClick={()=>{dispatch(logoutUser(router))}} title={'Logout'} icon={<RiLogoutCircleLine className='text-gray-600' size={22}/>}/>
               

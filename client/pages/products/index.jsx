@@ -4,28 +4,56 @@ import BreadCrumb from "../../components/BreadCrumb";
 import FilterOptions from "../../components/FilterOptions";
 import { MdClear } from "react-icons/md";
 import Pagenation from "../../components/Pagenation";
-const Products = () => {
+import { useDispatch, useSelector } from "react-redux";
+import { allProductsAPI } from "../../api/products";
+import { fillProducts } from "../../redux/actions/product";
+
+
+export const getServerSideProps = async(ctx)=>{
+  console.log(ctx.query);
+  let category = ctx.query?.category || '';
+  let page = ctx.query?.page;
+  const queries = {}
+  if (page)queries.page = page;
+  if (category) queries.category = category;
+  const res = await allProductsAPI(queries);
+  const products = res.data.data;
+  return {
+    props : {
+      fetchedProducts : products
+    }
+  }
+}
+
+
+const CheckBoxElement = ({ title, value, count }) => {
+  return (
+    <div className="flex items-center space-x-2 text-slate-600">
+      <input
+        type="checkbox"
+        value={value}
+        className="cursor-pointer appearance-none bg-white h-4 w-4 rounded-none checked:bg-primary checked:text-white border-[1px] border-gray-700"
+      />
+      <label
+        className="flex text-xs justify-between  items-center w-[100%]"
+        htmlFor={value}
+      >
+        <div>{title}</div>
+        <div className="text-xs">{count}</div>
+      </label>
+    </div>
+  );
+};
+
+const Products = ({fetchedProducts}) => {
+  const dispatch = useDispatch();
   const listInnerRef = useRef();
   const [showOptions, setShowOptions] = useState(true);
 
-  const CheckBoxElement = ({ title, value, count }) => {
-    return (
-      <div className="flex items-center space-x-2 text-slate-600">
-        <input
-          type="checkbox"
-          value={value}
-          className="cursor-pointer appearance-none bg-white h-4 w-4 rounded-none checked:bg-primary checked:text-white border-[1px] border-gray-700"
-        />
-        <label
-          className="flex text-xs justify-between  items-center w-[100%]"
-          htmlFor={value}
-        >
-          <div>{title}</div>
-          <div className="text-xs">{count}</div>
-        </label>
-      </div>
-    );
-  };
+  const products = useSelector(state=>state.products.list) || fetchedProducts
+  console.log(products);
+  console.log(fetchedProducts)
+
   const onScroll = (scroll, h) => {
     // console.log(scroll);
     if (listInnerRef.current) {
@@ -38,6 +66,9 @@ const Products = () => {
       }
     }
   };
+
+
+
   useEffect(() => {
     document.addEventListener("scroll", () =>
       onScroll(
@@ -45,6 +76,8 @@ const Products = () => {
         document.body.scrollHeight - window.innerHeight - 200
       )
     );
+    dispatch(fillProducts({status : true}, fetchedProducts));
+    
   }, []);
   return (
     <>
@@ -194,15 +227,9 @@ const Products = () => {
             <div className="text-grayX xl:font-semibold">All Products</div>
             <hr className=" my-4" />
             <div className="space-y-2 lg:space-y-0 xl:grid lg:grid lg:grid-cols-3 xl:grid-cols-3 3xl:grid-cols-4 lg:gap-3 3xl:gap-4 xl:p-2">
-              <ProductListCard />
-              <ProductListCard />
-              <ProductListCard />
-              <ProductListCard />
-              <ProductListCard />
-              <ProductListCard />
-              <ProductListCard />
-              <ProductListCard />
-              <ProductListCard />
+              {products.map((product)=>(
+                <ProductListCard product={product} key={product._id} />
+              ))}
             </div>
             <div className="flex items-center justify-center mt-4"><Pagenation/></div>
           </div>

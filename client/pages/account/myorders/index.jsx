@@ -1,6 +1,7 @@
 import React from 'react'
 import AccountLayout from '../../../components/AccountLayout';
 import Image from 'next/image';
+import { userAuthVerification } from '../../../utils/AuthVerification';
 
 
 export const getServerSideProps = (ctx)=>{
