@@ -2,6 +2,7 @@ import React from 'react';
 import AccountLayout from '../../components/AccountLayout';
 import {RiFileList3Line} from 'react-icons/ri';
 import {BsPlusLg} from 'react-icons/bs';
+import { userAuthVerification } from '../../utils/AuthVerification';
 
 export const getServerSideProps = (ctx)=>{
   const isAuth = userAuthVerification(ctx.req);

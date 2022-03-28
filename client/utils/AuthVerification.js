@@ -20,3 +20,20 @@ export const userAuthVerification=(req)=>{
 
     return false;
 } 
+
+export const checkToken = (req)=>{
+    console.log('')
+    if (req.cookies) {
+        const {token} = cookie.parse(req.headers.cookie);
+        if (!token) return false;
+        try {
+           const decoded =  verify(token,process.env.ACCESS_TOKEN_SECRET);
+           return decoded.id;
+        }catch(err) {
+            console.log(err)
+            return false;
+        }
+    }
+    
+    return false;
+}
