@@ -3,7 +3,7 @@ import Image from 'next/dist/client/image'
 import { useDispatch } from 'react-redux'
 import { loginUser, registerUser, updateAuth } from '../redux/actions/user';
 import { useRouter } from 'next/router';
-import { userAuthVerification } from '../utils/Authverification';
+
 import axios from 'axios';
 
 
