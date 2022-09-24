@@ -10,6 +10,8 @@ import OrderPrescription from '../components/OrderPrescription';
 import DekstopComponents from '../components/DekstopComponents';
 import {useState} from 'react';
 import cookie from 'cookie';
+import HomeSlider from '../components/HomeSlider';
+import TrackComponent from '../components/TrackComponent';
 
 
 
@@ -24,13 +26,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
   
-      <HeroImage/>
+      <HomeSlider/>
       <div className='lg:px-20'>
       <div className='hidden lg:block'>
       <DekstopComponents></DekstopComponents>
       </div>
       <OrderPrescription/>
-
+      <TrackComponent/>
       <CategoryHome/>
       <CategoryPreview heading="Popular Products"/>
       <CategoryPreview heading="Seasonal Products"/>

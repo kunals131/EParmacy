@@ -6,6 +6,7 @@ import SearchBar from './Searchbar';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
+import PhoneMenuSidebar from './PhoneSidebar';
 
 const DekstopHeader = ({className})=>{
     <div className={`${className}`}>
@@ -64,16 +65,18 @@ const Header = ({setShowSidebar}) => {
        
     }
 
+    const [open,setOpen] = useState(false);
+
 
   return (
       <>
-
+      <PhoneMenuSidebar isOpen={open} handleClose={()=>setOpen(false)}/>
     <div className='lg:bg-white bg-primary lg:shadow-md px-4 py-2 lg:px-3 xl:px-4 3xl:px-5 4xl:px-12 lg:py-6 md:py-5'>
         <div className='flex justify-between items-center'>
             <div className='text-white flex items-center  space-x-2'>
                 {
                     searchType==='bar'?
-                <MdMenu className='lg:hidden' onClick={()=>setShowSidebar(true)} size={30}/>:
+                <MdMenu className='lg:hidden' onClick={()=>setOpen(true)} size={30}/>:
                 <MdArrowBack className='lg:hidden'  size={30}/>
 
 }
